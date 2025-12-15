@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-myDark: #32343b;
+  --color-myDark-2: #3b3e44;
+  --color-myGold: #c2b59b;
+}
+
+/* remove input number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.htmlContent {
+  /* overflow-wrap: break-word;
+  overflow-x: auto; */
+
+  iframe {
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style: disc;
+
+    li {
+      margin-inline-start: 1.25rem;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+
+    li {
+      margin-inline-start: 1rem;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* fix hover in mobile */
+@custom-variant hover (&:hover);
+
+@layer {
+  body {
+    @apply bg-myDark text-white font-['El_Messiri'];
+  }
+
+  .pagePadding {
+    @apply pb-8 lg:pb-14 pt-24 lg:pt-28;
+  }
+
+  .sectionPadding {
+    @apply py-8 lg:py-14;
+  }
+
+  .mainBtn {
+    @apply bg-myGold text-white capitalize text-sm lg:text-base py-1 px-4 rounded-md cursor-pointer
+    flex items-center justify-center gap-1 shadow-none shadow-myGold/50 transition-all duration-300;
+
+    & svg {
+      @apply text-xl transition-all duration-500;
+    }
+
+    &:hover,
+    &.active {
+      @apply shadow-md -translate-y-0.5;
+
+      & svg {
+        @apply translate-x-1 rtl:-translate-x-1;
+      }
+    }
+
+    &.light {
+      @apply bg-white text-black;
+    }
+  }
+
+  .navLink {
+    @apply font-medium text-white transition duration-500 capitalize cursor-pointer;
+
+    &.active,
+    &:hover {
+      @apply text-myGold -translate-x-1 lg:-translate-x-0 lg:scale-105;
+    }
+  }
+
+  .swiper-btn {
+    @apply py-1 px-4 rounded-md bg-myGold text-white text-xl cursor-pointer transition-colors duration-300;
+  }
+
+  .swiper-btn.swiper-button-disabled {
+    @apply bg-white text-myGold cursor-not-allowed px-2;
+  }
+}

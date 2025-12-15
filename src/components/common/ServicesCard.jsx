@@ -1,0 +1,27 @@
+import { Link } from "react-router-dom";
+import { GoArrowLeft } from "react-icons/go";
+
+const ServicesCard = ({ item }) => {
+  return (
+    <div className="relative w-full h-[400px] mb-8">
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-full object-cover rounded-3xl"
+      />
+
+      <div className="absolute w-[90%] left-1/2 -translate-x-1/2 -bottom-4 bg-white text-black rounded-xl p-4">
+        <h2 className="text-lg font-bold">{item.title}</h2>
+
+        <Link
+          to={item.link}
+          className="py-2 px-4 rounded-full border text-gray-300 hover:text-myGold duration-300 group block mt-2 ms-auto w-fit"
+        >
+          <GoArrowLeft className="group-hover:rotate-45 duration-300 text-2xl" />
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default ServicesCard;
