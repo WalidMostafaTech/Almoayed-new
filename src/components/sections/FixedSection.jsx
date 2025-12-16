@@ -22,7 +22,7 @@ const FixedSection = () => {
             key={item.id}
             href={item.link}
             target="_blank"
-            className="bg-white p-1 pe-2 shadow-lg rounded-e-full flex items-center gap-1 lg:gap-2 group"
+            className="bg-white text-black p-1 pe-2 shadow-lg rounded-e-full flex items-center gap-1 lg:gap-2 group"
           >
             <p className="lg:text-sm font-semibold capitalize max-w-0 overflow-hidden group-hover:max-w-32 transition-all ease-in-out duration-500">
               {item.title}

@@ -23,23 +23,23 @@ const Header = () => {
       <header className="bg-myDark py-2 sticky top-0 z-50 mb-4">
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* Mobile menu */}
-            <button
-              onClick={() => setIsOpen(true)}
-              className="text-2xl lg:hidden text-myGold cursor-pointer"
-            >
-              <TbMenuDeep />
-            </button>
-
             <img src={logo} alt="Logo" className="w-22 lg:w-28" />
           </div>
+
+          {/* Mobile menu */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-2xl lg:hidden text-myGold cursor-pointer"
+          >
+            <TbMenuDeep />
+          </button>
 
           {/* Desktop nav */}
           <div className="hidden lg:block">
             <NavBar links={links} />
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="items-center gap-2 hidden lg:flex">
             <button className="mainBtn light">
               English <RiGlobalLine />
             </button>

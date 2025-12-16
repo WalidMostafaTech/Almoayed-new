@@ -56,7 +56,7 @@ const OurServices = () => {
         description="خدماتنا"
         title="تخصصاتنا تتحدث عن شغفنا"
         subtitle="نقدم مجموعة متكاملة من الخدمات العقارية لتلبية جميع احتياجات عملائنا،"
-        link="/"
+        link="/services"
         linkName="إكتشف جميع خدماتنا"
         wide
       />
@@ -73,13 +73,13 @@ const OurServices = () => {
             slidesPerView: 1.2,
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2.5,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 3.5,
           },
           1280: {
-            slidesPerView: 5,
+            slidesPerView: 4.5,
           },
         }}
         className="mt-8"

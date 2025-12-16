@@ -40,7 +40,7 @@ const OurPartners = () => {
       <SectionTitle
         description="شركاء النجاح"
         title="ثقتهم بنا اساس تميزنا"
-        link="/"
+        link="/partners"
         linkName="رؤية المزيد"
         wide
       />

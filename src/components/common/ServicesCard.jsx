@@ -14,7 +14,7 @@ const ServicesCard = ({ item }) => {
         <h2 className="font-bold">{item.title}</h2>
 
         <Link
-          to={item.link}
+          to={`/service-details/${item.id}`}
           className="py-2 px-4 rounded-full border text-gray-300 hover:text-myGold duration-300 group block mt-2 ms-auto w-fit"
         >
           <GoArrowLeft className="group-hover:rotate-45 duration-300 text-2xl" />

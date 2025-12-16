@@ -53,7 +53,7 @@ const OurProjects = () => {
         description="مشاريعنا"
         title="كل مشروع حكاية نجاح"
         subtitle="مشاريعنا ليست مجرد عقارات، بل فرص استثمارية صُممت لتلهم الثقة، وتخلق قيمة مستدامة لكل مساحة نطورها."
-        link="/"
+        link="/projects"
         linkName="إكتشف جميع مشاريعنا"
         wide
       />
@@ -67,16 +67,16 @@ const OurProjects = () => {
         }}
         breakpoints={{
           0: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.5,
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2.5,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 3.5,
           },
           1280: {
-            slidesPerView: 5,
+            slidesPerView: 4.5,
           },
         }}
       >
