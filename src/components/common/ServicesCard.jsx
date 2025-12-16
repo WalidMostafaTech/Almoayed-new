@@ -11,7 +11,7 @@ const ServicesCard = ({ item }) => {
       />
 
       <div className="absolute w-[90%] left-1/2 -translate-x-1/2 -bottom-4 bg-white text-black rounded-xl p-4">
-        <h2 className="text-lg font-bold">{item.title}</h2>
+        <h2 className="font-bold">{item.title}</h2>
 
         <Link
           to={item.link}

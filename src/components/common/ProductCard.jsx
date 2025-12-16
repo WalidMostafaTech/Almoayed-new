@@ -8,7 +8,7 @@ const ProductCard = ({ item }) => {
         alt={item.status}
         className="w-full h-32 object-contain"
       />
-      <h2 className="text-lg font-bold">{item.status}</h2>
+      <h2 className="text-lg font-bold text-myGold">{item.status}</h2>
 
       <Link to={item.link} className="mainBtn w-full">
         المزيد

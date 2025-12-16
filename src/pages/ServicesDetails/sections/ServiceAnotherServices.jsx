@@ -1,0 +1,62 @@
+import image from "../../../assets/images/project-img.jpg";
+import ServicesCard from "../../../components/common/ServicesCard";
+
+const list = [
+  {
+    id: 1,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+  {
+    id: 2,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+  {
+    id: 3,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+  {
+    id: 4,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+  {
+    id: 5,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+  {
+    id: 6,
+    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    image: image,
+    link: "/",
+  },
+];
+import SectionTitle from "../../../components/common/SectionTitle";
+
+const ServiceAnotherServices = () => {
+  return (
+    <section className="container sectionPadding space-y-4">
+      <SectionTitle
+        wide
+        description="خدمات اخرى"
+        title="تخصصاتنا تتحدث عن شغفنا"
+      />
+
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {list.map((item) => (
+          <ServicesCard key={item.id} item={item} />
+        ))}
+      </section>
+    </section>
+  );
+};
+
+export default ServiceAnotherServices;

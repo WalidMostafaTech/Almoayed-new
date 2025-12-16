@@ -35,7 +35,7 @@ const faqs = [
 ];
 
 const FAQS = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -50,6 +50,15 @@ const FAQS = () => {
       />
 
       <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+        {/* ===== Image ===== */}
+        <div className="relative hidden lg:block xl:col-span-2 h-[400px]">
+          <img
+            src={img}
+            alt="faq"
+            className="w-full h-full object-cover rounded-2xl rounded-ee-[60px] rounded-ss-[60px]"
+          />
+        </div>
+
         {/* ===== Accordion ===== */}
         <div className="space-y-3 xl:col-span-3">
           {faqs.map((item, index) => (
@@ -82,15 +91,6 @@ const FAQS = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* ===== Image ===== */}
-        <div className="relative hidden lg:block xl:col-span-2 h-[400px]">
-          <img
-            src={img}
-            alt="faq"
-            className="w-full h-full object-cover rounded-2xl rounded-ee-[60px] rounded-ss-[60px]"
-          />
         </div>
       </div>
     </section>

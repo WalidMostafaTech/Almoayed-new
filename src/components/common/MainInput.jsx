@@ -15,16 +15,12 @@ const MainInput = ({
   disabled = false,
   ...rest
 }) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const isPassword = type === "password";
-  const inputType = isPassword ? (showPassword ? "text" : "password") : type;
 
-  const commonInputClasses = `w-full text-sm bg-white outline-none border-none p-2 rounded-md ring-1 transition-all ${
-    isPassword && "pe-10"
-  } ${
+
+  const commonInputClasses = `w-full text-sm bg-white outline-none border-none p-2 rounded-md ring-1 transition-all pe-10 ${
     error
       ? "ring-red-700 ring-2"
-      : "ring-gray-400 focus-within:ring-myBlue-2 focus-within:ring-2"
+      : "ring-gray-400 focus-within:ring-myGold focus-within:ring-2"
   } ${disabled ? "opacity-60 cursor-not-allowed bg-gray-100" : ""}`;
 
   const commonLabel = label && (
@@ -60,31 +56,6 @@ const MainInput = ({
     );
   }
 
-  if (type === "select") {
-    return (
-      <div>
-        {commonLabel}
-        <select
-          id={id}
-          name={id}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-          disabled={disabled}
-          className={`select select-ghost select-md outline-none! ${commonInputClasses}`}
-          {...rest}
-        >
-          {placeholder && <option value="">{placeholder}</option>}
-          {options.map((option, idx) => (
-            <option key={`${option.value}-${idx}`} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        {commonError}
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -99,7 +70,7 @@ const MainInput = ({
         <input
           id={id}
           name={id}
-          type={inputType}
+          type={type}
           value={value}
           onChange={onChange}
           onBlur={onBlur}

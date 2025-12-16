@@ -1,5 +1,5 @@
-import AchievementsBox from "../../../components/common/AchievementsBox";
 import SectionTitle from "../../../components/common/SectionTitle";
+import AchievementsBox from "../../../components/sections/AchievementsBox";
 
 const OurAchievements = () => {
   return (

@@ -1,27 +1,32 @@
-const PageBanner = ({ image, title, overlay = "black" }) => {
+import logo from "../../assets/images/logo/logo-fav.png";
+
+const PageBanner = ({ image, title, subTitle, description }) => {
   return (
-    <div
-      className="w-full h-[200px] lg:h-[250px] overflow-hidden rounded-md shadow-md border border-myBlue-1 relative"
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div
-        className={`w-full h-full content-center ${
-          overlay === "black" ? "bg-black/50" : "bg-stone-400/50"
-        }`}
-      >
-        {title && (
-          <div className="container">
-            <h2 className="text-2xl lg:text-3xl text-white font-bold max-w-md">
+    <section className="p-4">
+      <div className="overflow-hidden rounded-[50px] shadow-lg shadow-myGold/50 border border-myGold p-4 lg:p-8">
+        <div
+          className={`w-full min-h-[250px] lg:min-h-[300px] flex flex-col items-center justify-center gap-2 lg:gap-4 rounded-[40px] p-4`}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {title && (
+            <p className="text-xs lg:text-sm flex items-center gap-2">
+              <img src={logo} alt="logo" className="w-3" />
               {title}
-            </h2>
-          </div>
-        )}
+            </p>
+          )}
+          {subTitle && (
+            <h2 className="text-lg lg:text-3xl font-bold">{subTitle}</h2>
+          )}
+          {description && (
+            <h4 className="text-sm lg:text-lg max-w-3xl text-center">{description}</h4>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

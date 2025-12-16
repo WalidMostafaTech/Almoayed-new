@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import MobileNav from "./MobileNav";
 import { RiGlobalLine } from "react-icons/ri";
 import { TbMenuDeep } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,29 +20,33 @@ const Header = () => {
 
   return (
     <>
-      <header className="container bg-myDark py-2 flex items-center justify-between sticky top-0 z-50 mb-4">
-        <div className="flex items-center gap-3">
-          {/* Mobile menu */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="text-2xl lg:hidden text-myGold cursor-pointer"
-          >
-            <TbMenuDeep />
-          </button>
+      <header className="bg-myDark py-2 sticky top-0 z-50 mb-4">
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {/* Mobile menu */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-2xl lg:hidden text-myGold cursor-pointer"
+            >
+              <TbMenuDeep />
+            </button>
 
-          <img src={logo} alt="Logo" className="w-22 lg:w-28" />
-        </div>
+            <img src={logo} alt="Logo" className="w-22 lg:w-28" />
+          </div>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:block">
-          <NavBar links={links} />
-        </div>
+          {/* Desktop nav */}
+          <div className="hidden lg:block">
+            <NavBar links={links} />
+          </div>
 
-        <div className="flex items-center gap-2">
-          <button className="mainBtn light">
-            English <RiGlobalLine />
-          </button>
-          <button className="mainBtn">تواصل معنا</button>
+          <div className="flex items-center gap-2">
+            <button className="mainBtn light">
+              English <RiGlobalLine />
+            </button>
+            <Link to="/contact" className="mainBtn">
+              تواصل معنا
+            </Link>
+          </div>
         </div>
       </header>
 

@@ -7,6 +7,7 @@ import OurPartners from "./sections/OurPartners";
 import DownloadAppBanner from "./sections/DownloadAppBanner";
 import FAQS from "./sections/FAQS";
 import Testimonials from "./sections/Testimonials";
+import ContactUsSection from "../../components/sections/ContactUsSection";
 
 const Home = () => {
   return (
@@ -20,6 +21,10 @@ const Home = () => {
       <DownloadAppBanner />
       <FAQS />
       <Testimonials />
+
+      <section className="sectionPadding container">
+        <ContactUsSection />
+      </section>
     </article>
   );
 };
