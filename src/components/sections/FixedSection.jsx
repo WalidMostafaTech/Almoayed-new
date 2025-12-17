@@ -1,5 +1,6 @@
-import { FaWhatsapp } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdLocalPhone } from "react-icons/md";
 
 const FixedSection = () => {
   const { setting } = useSelector((state) => state.setting);
@@ -7,6 +8,13 @@ const FixedSection = () => {
   const list = [
     {
       id: 1,
+      title: "Phone",
+      link: `tel:${(setting?.phone || "").replace(/\s/g, "")}`,
+      icon: <MdLocalPhone />,
+      color: "#215274",
+    },
+    {
+      id: 2,
       title: "whatsapp",
       link: `https://wa.me/${(setting?.whatsapp || "").replace(/\s/g, "")}`,
       icon: <FaWhatsapp />,
@@ -15,22 +23,21 @@ const FixedSection = () => {
   ];
 
   return (
-    <section className="fixed start-0 top-1/2 translate-y-1/2 z-40">
-      <div className="flex flex-col items-start gap-2">
+    <section className="fixed end-0 top-1/2 translate-y-1/2 z-40">
+      <div className="flex flex-col items-end gap-2">
         {list.map((item) => (
           <a
             key={item.id}
             href={item.link}
             target="_blank"
-            className="bg-white text-black p-1 pe-2 shadow-lg rounded-e-full flex items-center gap-1 lg:gap-2 group"
+            style={{ backgroundColor: `${item.color}` }}
+            className="p-1 ps-2 shadow-md shadow-myGold/20 rounded-s-full flex items-center gap-1 group"
           >
-            <p className="lg:text-sm font-semibold capitalize max-w-0 overflow-hidden group-hover:max-w-32 transition-all ease-in-out duration-500">
+            <span className="text-3xl">{item.icon}</span>
+
+            <p className="lg:text-base text-center font-semibold font-sans capitalize w-0 group-hover:w-20 transition-all ease-in-out duration-500 overflow-hidden">
               {item.title}
             </p>
-
-            <span className="text-3xl" style={{ color: `${item.color}` }}>
-              {item.icon}
-            </span>
           </a>
         ))}
       </div>

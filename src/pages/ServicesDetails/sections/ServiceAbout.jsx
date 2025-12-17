@@ -6,7 +6,7 @@ import { CgPhone } from "react-icons/cg";
 
 const ServiceAbout = () => {
   return (
-    <section className="container sectionPadding grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+    <section className="container sectionPadding grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
       <div>
         <SectionTitle
           wide

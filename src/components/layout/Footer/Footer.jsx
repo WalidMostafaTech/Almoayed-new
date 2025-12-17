@@ -20,9 +20,9 @@ const quickLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-myDark-2 py-4">
+    <footer className="bg-myDark-2">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-16 py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-16 py-8">
           <div className="space-y-4 lg:col-span-3">
             <img src={logo} alt="logo" className="w-32" />
 
@@ -32,32 +32,35 @@ const Footer = () => {
               تحديثات دقيقة في أي وقت ومن أي مكان.
             </p>
 
-            <div className="flex flex-wrap gap-4 w-full">
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-2 lg:gap-4">
               <a
                 href={"#"}
-                className="flex items-center gap-3 bg-white text-black px-5 py-3 rounded-xl"
+                dir="ltr"
+                className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl"
               >
                 <img
                   src={appStore}
                   alt={"Download on App Store"}
                   className="w-6 invert"
                 />
-                <div className="leading-tight text-right">
-                  <span className="block text-[10px] uppercase">
+                <div className="leading-tight">
+                  <span className="block text-[8px] uppercase">
                     Download on the
                   </span>
-                  <span className="text-sm font-bold">App Store</span>
+                  <span className="text-sm font-semibold">App Store</span>
                 </div>
               </a>
 
               <a
                 href={"#"}
-                className="flex items-center gap-3 bg-white text-black px-5 py-3 rounded-xl"
+                dir="ltr"
+                className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl"
               >
                 <img src={googlePlay} alt="google play" className="w-6" />
-                <div className="leading-tight text-right">
-                  <span className="block text-[10px] uppercase">Get it on</span>
-                  <span className="text-sm font-bold">Google Play</span>
+                <div className="leading-tight text-start">
+                  <span className="block text-[8px] uppercase">Get it on</span>
+                  <span className="text-sm font-semibold">Google Play</span>
                 </div>
               </a>
             </div>
@@ -88,36 +91,38 @@ const Footer = () => {
                 <p className="text-xs mb-1">الموقع:</p>
                 <a className="flex gap-2">
                   <IoMap className="text-lg mt-1" />
-                  الرياض - طريق الملك عبدالله - مقابل هوم سنتر
+                  <p className="flex-1">
+                    الرياض - طريق الملك عبدالله - مقابل هوم سنتر
+                  </p>
                 </a>
               </li>
               <li>
                 <p className="text-xs mb-1">راسلنا عبر البريد الإلكترونى:</p>
                 <a className="flex gap-2">
                   <MdEmail className="text-lg mt-1" />
-                  Info@l-sat.com
+                  <p className="flex-1">Info@l-sat.com</p>
                 </a>
               </li>
               <li>
                 <p className="text-xs mb-1">راسلنا عبر الجوال:</p>
                 <a className="flex gap-2">
                   <FaPhone className="text-lg mt-1" />
-                  00966506330044
+                  <p className="flex-1">00966506330044</p>
                 </a>
               </li>
               <li>
                 <p className="text-xs mb-1">تابعنا:</p>
                 <div className="flex gap-2">
-                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer">
+                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer hover:bg-myGold duration-200">
                     <FaFacebookF />
                   </a>
-                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer">
+                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer hover:bg-myGold duration-200">
                     <FaXTwitter />
                   </a>
-                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer">
+                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer hover:bg-myGold duration-200">
                     <FaInstagram />
                   </a>
-                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer">
+                  <a className="w-8 h-8 rounded-md flex items-center justify-center text-xl bg-[#706665] cursor-pointer hover:bg-myGold duration-200">
                     <FaLinkedinIn />
                   </a>
                 </div>

@@ -65,10 +65,9 @@ const AchievementsBox = () => {
           <div
             key={item.id}
             className={`
-              flex flex-col items-center justify-center gap-2 py-8
+              flex flex-col items-center justify-center gap-2 py-8 border-myGold
               ${index % 2 === 0 ? "border-l" : ""}
               ${index < 2 ? "border-b" : ""}
-              border-myGold
             `}
           >
             <span className="text-4xl font-bold text-myGold">

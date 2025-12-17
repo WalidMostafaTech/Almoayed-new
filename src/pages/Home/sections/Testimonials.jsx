@@ -1,13 +1,12 @@
 import SectionTitle from "../../../components/common/SectionTitle";
-import img from "../../../assets/images/logo/logo.png";
+import img from "../../../assets/images/project-img.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
-import PartnersCard from "../../../components/common/PartnersCard";
-import TestimonialsCard from "../../../components/common/TestimonialsCard";
+import TestimonialsCard from "../../../components/cards/TestimonialsCard";
 
 const list = [
   {
@@ -96,18 +95,18 @@ const Testimonials = () => {
             slidesPerView: 1.2,
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2.3,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 3.5,
           },
           1280: {
-            slidesPerView: 5,
+            slidesPerView: 4.5,
           },
         }}
       >
         {list.map((item) => (
-          <SwiperSlide key={item.id} className="my-8">
+          <SwiperSlide key={item.id} className="mt-8">
             <TestimonialsCard item={item} />
           </SwiperSlide>
         ))}

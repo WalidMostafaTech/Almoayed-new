@@ -21,7 +21,7 @@ const MobileNav = ({ links, isOpen, onClose }) => {
         <div className="flex justify-end p-4">
           <button
             onClick={onClose}
-            className="text-2xl cursor-pointer w-8 h-8 flex items-center justify-center rounded-full bg-myGold text-white"
+            className="text-2xl text-myGold cursor-pointer border border-myGold p-1 rounded"
           >
             <IoMdClose />
           </button>
@@ -33,14 +33,14 @@ const MobileNav = ({ links, isOpen, onClose }) => {
               key={link.id}
               to={link.href}
               onClick={onClose}
-              className="navLink"
+              className="mobileNavLink"
             >
               {link.name}
             </NavLink>
           ))}
         </nav>
 
-        <div className="flex flex-col gap-4 p-4">
+        <div className="flex flex-col gap-3 p-4">
           <button className="mainBtn light">
             English <RiGlobalLine />
           </button>

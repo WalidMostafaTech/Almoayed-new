@@ -3,8 +3,8 @@ import AppRouter from "./routes/AppRouter.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 import "./index.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./i18n";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },

@@ -29,7 +29,7 @@ const Header = () => {
           {/* Mobile menu */}
           <button
             onClick={() => setIsOpen(true)}
-            className="text-2xl lg:hidden text-myGold cursor-pointer"
+            className="text-2xl lg:hidden text-myGold cursor-pointer border border-myGold p-1 rounded"
           >
             <TbMenuDeep />
           </button>

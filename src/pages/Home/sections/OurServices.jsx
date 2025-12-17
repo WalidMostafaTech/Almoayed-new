@@ -1,49 +1,47 @@
 import SectionTitle from "../../../components/common/SectionTitle";
 import img from "../../../assets/images/project-img.jpg";
-import { Link } from "react-router-dom";
-import { GoArrowLeft } from "react-icons/go";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
-import ServicesCard from "../../../components/common/ServicesCard";
+import ServicesCard from "../../../components/cards/ServicesCard";
 
 const list = [
   {
     id: 1,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },
   {
     id: 2,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },
   {
     id: 3,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },
   {
     id: 4,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },
   {
     id: 5,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },
   {
     id: 6,
-    title: "مجموعة المؤيد للتطوير العقارى -المؤيد للمصاعد",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
   },

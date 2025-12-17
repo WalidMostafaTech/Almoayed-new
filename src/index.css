@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
 @theme {
   --color-myDark: #32343b;
@@ -70,7 +69,7 @@ input::-webkit-inner-spin-button {
   }
 
   .mainBtn {
-    @apply bg-myGold text-white capitalize text-sm lg:text-base py-1 px-4 rounded-md cursor-pointer
+    @apply bg-myGold text-white capitalize font-medium py-1 px-4 rounded-md cursor-pointer
     flex items-center justify-center gap-1 shadow-none shadow-myGold/50 transition-all duration-300;
 
     & svg {
@@ -87,7 +86,7 @@ input::-webkit-inner-spin-button {
     }
 
     &.light {
-      @apply bg-white text-black;
+      @apply bg-white text-black shadow-white/50;
     }
   }
 
@@ -100,11 +99,29 @@ input::-webkit-inner-spin-button {
     }
   }
 
-  .swiper-btn {
-    @apply py-1 px-4 rounded-md bg-myGold text-white text-xl cursor-pointer transition-colors duration-300;
+  .mobileNavLink {
+    @apply font-medium text-white transition-all duration-500 capitalize cursor-pointer relative;
+
+    &::after {
+      content: "";
+      @apply absolute top-1/2 start-0 -translate-y-1/2 w-0 h-2 opacity-0 bg-myGold transition-all duration-500;
+    }
+
+    &.active,
+    &:hover {
+      @apply text-myGold ps-4;
+
+      &::after {
+        @apply w-3 rounded-e-full opacity-100;
+      }
+    }
   }
 
-  .swiper-btn.swiper-button-disabled {
-    @apply bg-white text-myGold cursor-not-allowed px-2;
+  .swiper-btn {
+    @apply py-1 px-4 rounded-md bg-myGold text-white text-xl cursor-pointer transition-colors duration-300;
+
+    &.swiper-button-disabled {
+      @apply bg-white text-gray-500 cursor-not-allowed px-2;
+    }
   }
 }

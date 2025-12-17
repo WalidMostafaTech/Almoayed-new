@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const BlogCard = ({ item }) => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="w-full h-[300px] overflow-hidden rounded-3xl">
+      <div className="w-full h-[300px] overflow-hidden rounded-2xl">
         <img
           src={item.image}
           alt={item.title}
@@ -12,6 +14,10 @@ const BlogCard = ({ item }) => {
       <h3 className="font-bold text-myGold">{item.title}</h3>
 
       <p className="text-xs">{item.description}</p>
+
+      <Link to={`/blog-details/${item.id}`} className="mainBtn mt-2">
+        المزيد
+      </Link>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
-import ProductCard from "../../../components/common/ProductCard";
+import ProductCard from "../../../components/cards/ProductCard";
 
 const list = [
   {

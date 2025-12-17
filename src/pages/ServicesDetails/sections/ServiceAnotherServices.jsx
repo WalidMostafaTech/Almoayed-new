@@ -1,5 +1,6 @@
 import image from "../../../assets/images/project-img.jpg";
-import ServicesCard from "../../../components/common/ServicesCard";
+import ServicesCard from "../../../components/cards/ServicesCard";
+import SectionTitle from "../../../components/common/SectionTitle";
 
 const list = [
   {
@@ -39,7 +40,6 @@ const list = [
     link: "/",
   },
 ];
-import SectionTitle from "../../../components/common/SectionTitle";
 
 const ServiceAnotherServices = () => {
   return (
@@ -50,7 +50,7 @@ const ServiceAnotherServices = () => {
         title="تخصصاتنا تتحدث عن شغفنا"
       />
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {list.map((item) => (
           <ServicesCard key={item.id} item={item} />
         ))}

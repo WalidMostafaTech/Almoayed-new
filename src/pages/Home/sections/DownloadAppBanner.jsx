@@ -7,8 +7,8 @@ const DownloadAppBanner = () => {
   return (
     <section className="sectionPadding container">
       <div
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-l from-[#2f3338] to-[#5f646b] 
-        flex items-end gap-10"
+        className="relative overflow-hidden rounded-3xl flex items-end gap-10
+        bg-[radial-gradient(circle_at_center,_#6b7077_0%,_#2f3338_80%)]"
       >
         <div className="flex-1 justify-center hidden lg:flex pt-4">
           <img
@@ -18,9 +18,9 @@ const DownloadAppBanner = () => {
           />
         </div>
 
-        <div className="flex-1 text-white space-y-4 text-center px-6 py-10 lg:px-12 lg:py-14">
+        <div className="flex-1 text-white space-y-4 text-center px-6 py-10 lg:px-12 lg:py-14 max-w-2xl mx-auto lg:mx-0">
           {/* Logo */}
-          <img src={logo} alt="logo" className="w-36 ms-auto" />
+          <img src={logo} alt="logo" className="w-36 mx-auto lg:ms-auto lg:me-0" />
 
           {/* Title */}
           <h2 className="text-xl lg:text-2xl font-bold leading-snug">
@@ -28,7 +28,7 @@ const DownloadAppBanner = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          <p className="text-white/80 leading-relaxed">
             اكتشف تجربة عقارية متكاملة من خلال تطبيق المؤيد وتابع أحدث مشاريعنا،
             خدماتنا، وجميع التفاصيل في مكان واحد، بسرعة وسهولة، مع تحديثات دقيقة
             في أي وقت ومن أي مكان.
@@ -38,15 +38,16 @@ const DownloadAppBanner = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href={"#"}
-              className="flex items-center gap-3 bg-black text-white px-5 py-3 rounded-full"
+              dir="ltr"
+              className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full"
             >
               <img
                 src={appleIcon}
                 alt={"Download on App Store"}
-                className="h-6"
+                className="w-6"
               />
-              <div className="leading-tight text-right">
-                <span className="block text-[10px] uppercase opacity-80">
+              <div className="leading-tight">
+                <span className="block text-[8px] uppercase opacity-80">
                   Download on the
                 </span>
                 <span className="text-sm font-semibold">App Store</span>
@@ -55,11 +56,12 @@ const DownloadAppBanner = () => {
 
             <a
               href={"#"}
-              className="flex items-center gap-3 bg-black text-white px-5 py-3 rounded-full"
+              dir="ltr"
+              className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full"
             >
-              <img src={googleIcon} alt="google play" className="h-6" />
-              <div className="leading-tight text-right">
-                <span className="block text-[10px] uppercase opacity-80">
+              <img src={googleIcon} alt="google play" className="w-6" />
+              <div className="leading-tight text-start">
+                <span className="block text-[8px] uppercase opacity-80">
                   Get it on
                 </span>
                 <span className="text-sm font-semibold">Google Play</span>

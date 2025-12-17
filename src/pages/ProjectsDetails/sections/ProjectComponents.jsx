@@ -77,7 +77,7 @@ const list = [
 const ProjectComponents = () => {
   return (
     <section className="px-4 my-8 lg:my-16">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 bg-[#030213] p-4 lg:p-16 rounded-4xl">
+      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 bg-[#030213] p-4 md:p-16 rounded-3xl md:rounded-[70px]">
         <div className="content-center">
           <SectionTitle
             title="المكونات"

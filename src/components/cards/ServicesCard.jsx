@@ -15,7 +15,7 @@ const ServicesCard = ({ item }) => {
 
         <Link
           to={`/service-details/${item.id}`}
-          className="py-2 px-4 rounded-full border text-gray-300 hover:text-myGold duration-300 group block mt-2 ms-auto w-fit"
+          className="py-2 px-4 rounded-full border text-gray-400 hover:text-myGold shadow-md hover:shadow-lg hover:shadow-myGold/50 duration-300 group block mt-2 ms-auto w-fit"
         >
           <GoArrowLeft className="group-hover:rotate-45 duration-300 text-2xl" />
         </Link>

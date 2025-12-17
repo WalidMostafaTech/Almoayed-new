@@ -36,11 +36,12 @@ const Hero = () => {
           prevEl: ".hero-prev",
           nextEl: ".hero-next",
         }}
+        spaceBetween={20}
         className="relative"
       >
         {list.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative h-[40vh] xl:h-[60vh]">
+            <div className="relative h-[60vh] xl:h-[80vh]">
               <div className="w-full lg:w-2/3 h-full rounded-4xl overflow-hidden">
                 <img
                   src={item.image}

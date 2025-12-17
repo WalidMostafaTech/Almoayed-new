@@ -4,9 +4,6 @@ import { CiUser } from "react-icons/ci";
 import { HiOutlineMail } from "react-icons/hi";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 
 const ContactUsSection = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +14,6 @@ const ContactUsSection = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -65,50 +61,27 @@ const ContactUsSection = () => {
     const newErrors = validateForm();
 
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
       console.log("Form submitted:", formData);
-
-      setTimeout(() => {
-        setFormData({ name: "", phone: "", email: "", message: "" });
-        setSubmitted(false);
-      }, 3000);
     } else {
       setErrors(newErrors);
     }
   };
 
-  const latitude = "25.2048";
-  const longitude = "55.2708";
-
-  const markerIcon = new L.Icon({
-    iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-  });
-
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-12 rounded-4xl overflow-hidden w-full max-w-7xl mx-auto bg-myDark-2">
-      <div className="col-span-1 lg:col-span-5 min-h-[500px] bg-white order-2 lg:order-1">
-        {" "}
-        <MapContainer
-          center={[latitude, longitude]}
-          zoom={15}
-          scrollWheelZoom={false}
-          className="w-full h-full"
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          />
-          <Marker position={[latitude, longitude]} icon={markerIcon}>
-            <Popup>موقعنا هنا</Popup>
-          </Marker>
-        </MapContainer>
+    <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 rounded-4xl overflow-hidden w-full max-w-7xl mx-auto">
+      <div className="col-span-1 lg:col-span-5 min-h-[500px] bg-white order-2 lg:order-1 rounded-t-4xl lg:rounded-t-none overflow-hidden">
+        <iframe
+          title="map"
+          src="https://www.google.com/maps?q=25.2048,55.2708&z=15&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="col-span-1 lg:col-span-7 p-4 lg:p-10 space-y-4 order-1 lg:order-2 content-center"
+        className="col-span-1 lg:col-span-7 p-6 lg:p-10 space-y-4 order-1 lg:order-2 content-center bg-myDark-2 rounded-b-4xl lg:rounded-b-none"
       >
         <hgroup className="space-y-2">
           <p className="text-myGold text-sm">تواصل معنا</p>
@@ -230,8 +203,8 @@ const ContactUsSection = () => {
                 : "ring-myGold ring-1 focus-within:ring-2"
             }`}
           ></textarea>
-          {errors.email && (
-            <p className="text-red-700 text-sm mt-1">{errors.email}</p>
+          {errors.message && (
+            <p className="text-red-700 text-sm mt-1">{errors.message}</p>
           )}
         </div>
 

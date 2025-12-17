@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "../../../components/common/SectionTitle";
 import img from "../../../assets/images/project-img.jpg";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const faqs = [
   {
@@ -49,30 +49,30 @@ const FAQS = () => {
         wide
       />
 
-      <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-8 items-start">
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-8 gap-8 items-start">
         {/* ===== Image ===== */}
-        <div className="relative hidden lg:block xl:col-span-2 h-[400px]">
+        <div className="relative hidden lg:block lg:col-span-2 xl:col-span-3 h-[400px]">
           <img
             src={img}
             alt="faq"
-            className="w-full h-full object-cover rounded-2xl rounded-ee-[60px] rounded-ss-[60px]"
+            className="w-full h-full object-cover rounded-2xl rounded-es-[70px] rounded-se-[70px]"
           />
         </div>
 
         {/* ===== Accordion ===== */}
-        <div className="space-y-3 xl:col-span-3">
+        <div className="space-y-3 lg:col-span-3 xl:col-span-5">
           {faqs.map((item, index) => (
             <div key={index} className="bg-myDark-2 rounded-xl overflow-hidden">
               {/* Question */}
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between px-5 py-4 cursor-pointer"
+                className="w-full flex justify-between px-5 py-4 cursor-pointer"
               >
-                <span className="font-medium">
+                <span className="font-medium flex-1 text-start">
                   {index + 1}. {item.q}
                 </span>
 
-                <MdKeyboardArrowDown
+                <MdKeyboardDoubleArrowDown
                   className={`text-2xl transition-transform ${
                     activeIndex === index ? "rotate-180" : ""
                   }`}

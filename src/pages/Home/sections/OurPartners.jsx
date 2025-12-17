@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
-import PartnersCard from "../../../components/common/PartnersCard";
+import PartnersCard from "../../../components/cards/PartnersCard";
 
 const list = [
   {
@@ -33,6 +33,14 @@ const list = [
     id: 6,
     icon: img,
   },
+  {
+    id: 7,
+    icon: img,
+  },
+  {
+    id: 8,
+    icon: img,
+  },
 ];
 const OurPartners = () => {
   return (
@@ -54,16 +62,19 @@ const OurPartners = () => {
         }}
         breakpoints={{
           0: {
-            slidesPerView: 1.2,
+            slidesPerView: 2.2,
+          },
+          480: {
+            slidesPerView: 2.8,
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3.5,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 4.5,
           },
           1280: {
-            slidesPerView: 5,
+            slidesPerView: 6.3,
           },
         }}
       >

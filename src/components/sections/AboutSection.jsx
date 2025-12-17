@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
-    <section className="sectionPadding container grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-8">
+    <section className="sectionPadding container grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-16">
       <div className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
         <div className="absolute h-full w-[80%] top-0 start-0 bg-myGold rounded-4xl" />
 
@@ -25,6 +25,7 @@ const AboutSection = () => {
 
       <div>
         <SectionTitle
+          wide
           description="من نحن"
           title="رؤية هندسية تصنع الفارق"
           subtitle={

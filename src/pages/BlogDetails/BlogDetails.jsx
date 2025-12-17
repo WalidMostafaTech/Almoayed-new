@@ -1,6 +1,7 @@
 import PageBanner from "../../components/common/PageBanner";
 import image from "../../assets/images/project-img.jpg";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { RxCopy } from "react-icons/rx";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
@@ -16,7 +17,7 @@ const BlogDetails = () => {
 
       <section className="sectionPadding px-4 w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8">
         {/* ===== Content ===== */}
-        <div className="col-span-1 lg:col-span-5 w-full min-h-[400px] lg:min-h-[600px] flex flex-col gap-4">
+        <div className="col-span-1 lg:col-span-5 w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] max-w-lg mx-auto flex flex-col gap-4">
           <img
             src={image}
             alt=""
@@ -39,16 +40,21 @@ const BlogDetails = () => {
               <span className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer">
                 <FaXTwitter />
               </span>
+              <span className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer">
+                <RxCopy />
+              </span>
             </div>
           </div>
         </div>
 
         {/* ===== Image ===== */}
         <div className="col-span-1 lg:col-span-7 space-y-4">
-          <h2 className="text-2xl lg:text-3xl font-bold">إتجاهات التطوير العقارى فى جدة</h2>
+          <h2 className="text-2xl lg:text-3xl font-bold">
+            إتجاهات التطوير العقارى فى جدة
+          </h2>
 
-          <p className="p-2 rounded-md bg-white text-black font-bold flex items-center gap-2 w-fit text-sm">
-            <FaRegCalendarAlt className="text-yellow-700" />
+          <p className="py-2 px-4 rounded-md bg-white text-black flex items-center gap-2 w-fit text-sm">
+            <FaRegCalendarAlt className="text-yellow-500 text-lg" />
             تاريخ النشر : 12 يوليو 2023
           </p>
 

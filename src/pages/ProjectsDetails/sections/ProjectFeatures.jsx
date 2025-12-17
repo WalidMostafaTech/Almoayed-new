@@ -32,7 +32,7 @@ const ProjectFeatures = () => {
         subtitle="نقدم لكم مشروعاً يجمع بين الجودة والابتكار والاستدامة"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-16 mt-4 lg:mt-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mt-4 lg:mt-8">
         <div className="col-span-1 lg:col-span-5 h-[300px] md:h-[400px] rounded-3xl overflow-hidden border-4 border-white">
           <img
             src={image}
@@ -48,7 +48,7 @@ const ProjectFeatures = () => {
                 index + 1 >= 10 ? "index + 1" : `0${index + 1}`
               } `}</span>
 
-              <p className="text-sm flex-1">{item.title}</p>
+              <p className="font-bold flex-1">{item.title}</p>
             </li>
           ))}
         </ul>

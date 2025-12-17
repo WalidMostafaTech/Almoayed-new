@@ -68,10 +68,10 @@ const ProjectFacilitiesAndEquipment = () => {
           subtitle="تفاصيلٌ صُمّمت بعناية لتجسّد أسلوب حياة عصريّ مُتكامل، يجمع بين الراحة والرفاه والابتكار."
         />
   
-        <div className="mt-8 space-y-4 lg:space-y-8">
+        <div className="mt-8 space-y-6 lg:space-y-10">
           {list.map((item) => (
             <div key={item.id}>
-              <h3 className="flex items-center gap-2 mb-4 text-2xl font-bold">
+              <h3 className="flex items-center gap-2 mb-6 text-3xl font-bold">
                 <img src={item.icon} alt="icon" className="w-6 lg:w-8" />
                 {item.title}
               </h3>
@@ -83,7 +83,7 @@ const ProjectFacilitiesAndEquipment = () => {
                       index + 1 >= 10 ? "index + 1" : `0${index + 1}`
                     } `}</span>
   
-                    <p className="text-sm flex-1">{item.title}</p>
+                    <p className="flex-1">{item.title}</p>
                   </li>
                 ))}
               </ul>

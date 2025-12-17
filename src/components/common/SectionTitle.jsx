@@ -12,7 +12,7 @@ const SectionTitle = ({
 }) => {
   return (
     <div className="flex items-end justify-between flex-wrap gap-4">
-      <hgroup className={`${wide ? "max-w-2xl" : "max-w-lg"} space-y-4`}>
+      <hgroup className={`${wide ? "max-w-2xl" : "max-w-lg"} space-y-2 lg:space-y-4`}>
         {description && <p className="text-myGold text-sm">{description}</p>}
         {title && (
           <h2 className="text-3xl lg:text-4xl font-bold capitalize">{title}</h2>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   return (
-    <div className="rounded-xl border border-myGold shadow-lg shadow-myGold/50 p-4 flex flex-col items-center gap-4 bg-myDark-2">
+    <div className="rounded-xl border border-myGold shadow-md shadow-myGold/50 p-4 flex flex-col items-center gap-4 bg-myDark-2">
       <img
         src={item.icon}
         alt={item.status}

@@ -1,6 +1,6 @@
 import image from "../../assets/images/project-img.jpg";
 import PageBanner from "../../components/common/PageBanner";
-import BlogCard from "../../components/common/BlogCard";
+import BlogCard from "../../components/cards/BlogCard";
 
 const list = [
   {

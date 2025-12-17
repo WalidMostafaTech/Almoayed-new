@@ -1,6 +1,6 @@
 import image from "../../assets/images/project-img.jpg";
 import PageBanner from "../../components/common/PageBanner";
-import PartnersCard from "../../components/common/PartnersCard";
+import PartnersCard from "../../components/cards/PartnersCard";
 
 const list = [
   {
@@ -39,7 +39,7 @@ const Partners = () => {
         image={image}
       />
 
-      <section className="sectionPadding container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <section className="sectionPadding container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
         {list.map((item) => (
           <PartnersCard key={item.id} item={item} />
         ))}
