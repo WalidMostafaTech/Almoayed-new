@@ -15,8 +15,8 @@ const ServiceServices = () => {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-2">المؤيد للمصاعد</h2>
-        <ul className="space-y-2">
+        <h2 className="text-3xl font-bold mb-2">المؤيد للمصاعد</h2>
+        <ul className="space-y-2 text-lg">
           <li>
             ✅ توريد وتركيب جميع أنواع المصاعد نوفر مصاعد حديثة تناسب المباني
             السكنية، التجارية، الإدارية، والمولات، مع الالتزام بأعلى معايير

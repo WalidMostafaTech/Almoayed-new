@@ -4,6 +4,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
+import { useSelector } from "react-redux";
 
 const list = [
   {
@@ -23,9 +24,12 @@ const list = [
 ];
 
 const Hero = () => {
+  const { lang } = useSelector((state) => state.language);
+
   return (
     <section className="container">
       <Swiper
+        dir={lang === "ar" ? "rtl" : "ltr"}
         modules={[Autoplay, Navigation]}
         autoplay={{
           delay: 4000,
@@ -51,9 +55,9 @@ const Hero = () => {
               </div>
 
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-2 lg:items-end lg:text-end w-full lg:max-w-lg lg:ms-auto">
-                <p className="text-lg text-white">{item.subTitle}</p>
+                <p className="text-xl text-white">{item.subTitle}</p>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-[90px] font-bold leading-tight text-white">
+                <h1 className="text-5xl sm:text-6xl lg:text-[100px] font-bold leading-tight text-white">
                   {item.title}{" "}
                   <span className="text-myGold">{item.titleSpan}</span>
                 </h1>

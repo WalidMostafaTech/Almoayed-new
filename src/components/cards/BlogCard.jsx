@@ -11,9 +11,9 @@ const BlogCard = ({ item }) => {
         />
       </div>
 
-      <h3 className="font-bold text-myGold">{item.title}</h3>
+      <h3 className="font-bold text-myGold text-lg">{item.title}</h3>
 
-      <p className="text-xs">{item.description}</p>
+      <p className="text-sm">{item.description}</p>
 
       <Link to={`/blog-details/${item.id}`} className="mainBtn mt-2">
         المزيد

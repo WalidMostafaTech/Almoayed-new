@@ -65,15 +65,15 @@ const AchievementsBox = () => {
           <div
             key={item.id}
             className={`
-              flex flex-col items-center justify-center gap-2 py-8 border-myGold
-              ${index % 2 === 0 ? "border-l" : ""}
+              flex flex-col items-center justify-center gap-2 text-center py-8 border-myGold
+              ${index % 2 === 0 ? "border-e" : ""}
               ${index < 2 ? "border-b" : ""}
             `}
           >
-            <span className="text-4xl font-bold text-myGold">
+            <span className="text-5xl font-bold text-myGold">
               +{counts[index]}
             </span>
-            <span className="text-sm text-center">{item.label}</span>
+            <span>{item.label}</span>
           </div>
         ))}
       </div>

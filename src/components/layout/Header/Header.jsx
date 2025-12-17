@@ -2,9 +2,9 @@ import { useState } from "react";
 import logo from "../../../assets/images/logo/logo.png";
 import NavBar from "./NavBar";
 import MobileNav from "./MobileNav";
-import { RiGlobalLine } from "react-icons/ri";
 import { TbMenuDeep } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import LanguageSwitcher from "../../common/LanguageSwitcher";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +22,9 @@ const Header = () => {
     <>
       <header className="bg-myDark py-2 sticky top-0 z-50 mb-4">
         <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="w-22 lg:w-28" />
-          </div>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Logo" className="w-28 lg:w-36" />
+          </Link>
 
           {/* Mobile menu */}
           <button
@@ -40,10 +40,12 @@ const Header = () => {
           </div>
 
           <div className="items-center gap-2 hidden lg:flex">
-            <button className="mainBtn light">
-              English <RiGlobalLine />
-            </button>
-            <Link to="/contact" className="mainBtn">
+            <LanguageSwitcher />
+            <Link
+              onClick={() => setIsOpen(false)}
+              to="/contact"
+              className="mainBtn"
+            >
               تواصل معنا
             </Link>
           </div>

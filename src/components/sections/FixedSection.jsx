@@ -8,14 +8,14 @@ const FixedSection = () => {
   const list = [
     {
       id: 1,
-      title: "Phone",
+      title: "هاتف",
       link: `tel:${(setting?.phone || "").replace(/\s/g, "")}`,
       icon: <MdLocalPhone />,
       color: "#215274",
     },
     {
       id: 2,
-      title: "whatsapp",
+      title: "واتساب",
       link: `https://wa.me/${(setting?.whatsapp || "").replace(/\s/g, "")}`,
       icon: <FaWhatsapp />,
       color: "#25D366",

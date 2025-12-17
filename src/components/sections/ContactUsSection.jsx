@@ -120,7 +120,7 @@ const ContactUsSection = () => {
             }`}
           >
             <PhoneInput
-              country={"ae"} // الإمارات افتراضي (غيرها لو حابب)
+              country={"sa"}
               value={formData.phone}
               placeholder="* رقم الجوال"
               onChange={(phone) => {
@@ -210,7 +210,7 @@ const ContactUsSection = () => {
 
         <button className="mainBtn">
           إرسال الرسالة
-          <GoArrowLeft />
+          <GoArrowLeft className="ltr:rotate-180"/>
         </button>
       </form>
     </section>

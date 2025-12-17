@@ -1,6 +1,6 @@
 import { IoMdClose } from "react-icons/io";
-import { RiGlobalLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
+import LanguageSwitcher from "../../common/LanguageSwitcher";
 
 const MobileNav = ({ links, isOpen, onClose }) => {
   return (
@@ -41,10 +41,8 @@ const MobileNav = ({ links, isOpen, onClose }) => {
         </nav>
 
         <div className="flex flex-col gap-3 p-4">
-          <button className="mainBtn light">
-            English <RiGlobalLine />
-          </button>
-          <Link to="/contact" className="mainBtn">
+          <LanguageSwitcher />
+          <Link to="/contact" onClick={onClose} className="mainBtn">
             تواصل معنا
           </Link>
         </div>

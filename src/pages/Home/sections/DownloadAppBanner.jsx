@@ -23,19 +23,19 @@ const DownloadAppBanner = () => {
           <img src={logo} alt="logo" className="w-36 mx-auto lg:ms-auto lg:me-0" />
 
           {/* Title */}
-          <h2 className="text-xl lg:text-2xl font-bold leading-snug">
+          <h2 className="text-2xl font-bold leading-snug">
             حمل تطبيق المؤيد وتابع مشاريعـك بكل سهولة
           </h2>
 
           {/* Description */}
-          <p className="text-white/80 leading-relaxed">
+          <p className="text-white/80 leading-relaxed text-lg">
             اكتشف تجربة عقارية متكاملة من خلال تطبيق المؤيد وتابع أحدث مشاريعنا،
             خدماتنا، وجميع التفاصيل في مكان واحد، بسرعة وسهولة، مع تحديثات دقيقة
             في أي وقت ومن أي مكان.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
             <a
               href={"#"}
               dir="ltr"

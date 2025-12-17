@@ -83,7 +83,7 @@ const ProjectFacilitiesAndEquipment = () => {
                       index + 1 >= 10 ? "index + 1" : `0${index + 1}`
                     } `}</span>
   
-                    <p className="flex-1">{item.title}</p>
+                    <p className="flex-1 text-xl">{item.title}</p>
                   </li>
                 ))}
               </ul>

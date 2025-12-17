@@ -32,9 +32,9 @@ const ProjectSteps = () => {
           {list.map((item) => (
             <p
               key={item.id}
-              className="text-sm py-8 lg:py-12 px-4 relative border border-white rounded-xl text-center"
+              className="text-lg py-8 lg:py-12 px-4 relative border border-white rounded-xl text-center"
             >
-              <span className="text-black text-2xl bg-white font-bold w-14 h-14 rounded-full flex items-center justify-center absolute -top-7 -start-1 sm:start-1/2 sm:translate-x-1/2">{`${
+              <span className="text-black text-2xl bg-white font-bold w-14 h-14 rounded-full flex items-center justify-center absolute -top-7 -start-1 sm:start-1/2 sm:translate-x-1/2 ltr:sm:-translate-x-1/2">{`${
                 item.id >= 10 ? item.id : `0${item.id}`
               }`}</span>
 

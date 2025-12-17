@@ -53,12 +53,12 @@ const AboutUS = () => {
 
       <section className="sectionPadding container flex flex-wrap gap-4">
         {list.map((item) => (
-          <div key={item.id} className="p-4 rounded-xl bg-myDark-2 border border-myGold space-y-2 flex-1 min-w-xs">
-            <h3 className="flex items-center gap-2 font-bold text-lg">
-              <img src={logo} alt="logo" className="w-3" />
+          <div key={item.id} className="p-4 rounded-xl bg-myDark-2 border border-myGold space-y-2 flex-1 min-w-[200px]">
+            <h3 className="flex items-center gap-2 font-bold text-xl">
+              <img src={logo} alt="logo" className="w-4" />
               {item.title}
             </h3>
-            <p className="text-sm">{item.description}</p>
+            <p>{item.description}</p>
           </div>
         ))}
       </section>

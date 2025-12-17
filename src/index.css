@@ -91,11 +91,11 @@ input::-webkit-inner-spin-button {
   }
 
   .navLink {
-    @apply font-medium text-white transition duration-500 capitalize cursor-pointer;
+    @apply text-lg font-medium text-white transition duration-500 capitalize cursor-pointer;
 
     &.active,
     &:hover {
-      @apply text-myGold -translate-x-1 lg:-translate-x-0 lg:scale-105;
+      @apply text-myGold scale-105;
     }
   }
 
