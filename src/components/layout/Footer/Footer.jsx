@@ -24,9 +24,9 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-16 py-8">
           <div className="space-y-4 lg:col-span-3">
-            <img src={logo} alt="logo" className="w-32" />
+            <img src={logo} alt="logo" className="w-40" />
 
-            <p className="text-sm leading-relaxed">
+            <p className="leading-relaxed">
               اكتشف تجربة عقارية متكاملة من خلال تطبيق المؤيد وتابع احدث
               مشاريعنا، خدماتنا، وجميع التفاصيل في مكان واحد، بسرعة وسهولة، مع
               تحديثات دقيقة في أي وقت ومن أي مكان.
@@ -48,7 +48,7 @@ const Footer = () => {
                   <span className="block text-[8px] uppercase">
                     Download on the
                   </span>
-                  <span className="text-sm font-semibold">App Store</span>
+                  <span className="text-sm font-bold">App Store</span>
                 </div>
               </a>
 
@@ -60,21 +60,21 @@ const Footer = () => {
                 <img src={googlePlay} alt="google play" className="w-6" />
                 <div className="leading-tight text-start">
                   <span className="block text-[8px] uppercase">Get it on</span>
-                  <span className="text-sm font-semibold">Google Play</span>
+                  <span className="text-sm font-bold">Google Play</span>
                 </div>
               </a>
             </div>
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-bold mb-2">روابط سريعة</h4>
+            <h4 className="font-bold mb-2 text-lg">روابط سريعة</h4>
 
             <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.id}>
                   <Link
                     to={link.href}
-                    className="hover:text-myGold duration-300 text-sm"
+                    className="hover:text-myGold duration-300"
                   >
                     {link.name}
                   </Link>
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-bold mb-2">تواصل معنا الآن:</h4>
+            <h4 className="font-bold mb-2 text-lg">تواصل معنا الآن:</h4>
 
             <ul className="space-y-4">
               <li>

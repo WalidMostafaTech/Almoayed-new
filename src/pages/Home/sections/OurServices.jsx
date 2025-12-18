@@ -51,7 +51,6 @@ const list = [
 const OurServices = () => {
   const { lang } = useSelector((state) => state.language);
 
-
   return (
     <section className="sectionPadding container">
       <SectionTitle

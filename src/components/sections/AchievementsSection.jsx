@@ -1,6 +1,7 @@
+import SectionTitle from "../common/SectionTitle";
 import { useEffect, useRef, useState } from "react";
 
-const AchievementsBox = () => {
+const AchievementsSection = ({ center = false }) => {
   const items = [
     { id: 1, value: 150, label: "مشروع" },
     { id: 2, value: 100, label: "متر مربع أراضي مطورة" },
@@ -56,29 +57,38 @@ const AchievementsBox = () => {
   }, [startCount]);
 
   return (
-    <div
-      ref={sectionRef}
-      className="rounded-xl border border-myGold shadow-lg shadow-myGold/50 p-4 bg-myDark-2"
-    >
-      <div className="grid grid-cols-2">
-        {items.map((item, index) => (
-          <div
-            key={item.id}
-            className={`
+    <section className="sectionPadding container">
+      <SectionTitle
+        title="إنجازاتنا في أرقام"
+        subtitle="أرقامنا ليست مجرد أرقام, بل هي قصص نجاح ملهمة للذين آمنو بأحلامهم و جعلوها حقيقة"
+        wide
+        center={center}
+      />
+
+      <div
+        ref={sectionRef}
+        className="rounded-xl border border-myGold shadow-lg shadow-myGold/50 p-4 bg-myDark-2 mt-8"
+      >
+        <div className="grid grid-cols-2">
+          {items.map((item, index) => (
+            <div
+              key={item.id}
+              className={`
               flex flex-col items-center justify-center gap-2 text-center py-8 border-myGold
               ${index % 2 === 0 ? "border-e" : ""}
               ${index < 2 ? "border-b" : ""}
             `}
-          >
-            <span className="text-5xl font-bold text-myGold">
-              +{counts[index]}
-            </span>
-            <span>{item.label}</span>
-          </div>
-        ))}
+            >
+              <span className="text-5xl font-bold text-myGold">
+                +{counts[index]}
+              </span>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default AchievementsBox;
+export default AchievementsSection;

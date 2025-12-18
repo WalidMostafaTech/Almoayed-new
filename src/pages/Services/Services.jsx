@@ -1,5 +1,5 @@
 import image from "../../assets/images/project-img.jpg";
-import PageBanner from "../../components/common/PageBanner";
+import PageBanner from "../../components/cards/PageBanner";
 import ServicesCard from "../../components/cards/ServicesCard";
 
 const list = [

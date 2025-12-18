@@ -1,4 +1,4 @@
-import PageBanner from "../../components/common/PageBanner";
+import PageBanner from "../../components/cards/PageBanner";
 import image from "../../assets/images/project-img.jpg";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { RxCopy } from "react-icons/rx";

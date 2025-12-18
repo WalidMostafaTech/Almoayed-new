@@ -9,9 +9,14 @@ const SectionTitle = ({
   linkName,
   icon = true,
   wide = false,
+  center = false,
 }) => {
   return (
-    <div className="flex items-end justify-between flex-wrap gap-4">
+    <div
+      className={`flex items-end justify-between flex-wrap gap-4 ${
+        center ? "text-center justify-center" : ""
+      }`}
+    >
       <hgroup
         className={`${wide ? "max-w-2xl" : "max-w-lg"} space-y-2 lg:space-y-4`}
       >

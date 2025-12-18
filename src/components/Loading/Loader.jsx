@@ -1,28 +1,25 @@
-// import logoImg from "../../assets/images/logo/logo-map.png";
-import { useTranslation } from "react-i18next";
-import { FaCog } from "react-icons/fa";
-
 const Loader = () => {
-  const { t } = useTranslation();
   return (
-    <div className="flex flex-col items-center">
-      {/* <img src={logoImg} alt="Logo" className="w-16 lg:w-22 animate-bounce" /> */}
-
-      <div className="relative w-36 h-36 flex items-center justify-center">
-        <FaCog className="text-[6rem] text-myBlue-2 animate-spin-slow" />
-
-        <FaCog
-          className="absolute top-2 left-2 text-[2.5rem] text-myGreen animate-spin-reverse-slow"
-          style={{ transformOrigin: "center" }}
-        />
-
-        <FaCog
-          className="absolute bottom-2 right-2 text-[2.5rem] text-myGreen animate-spin-reverse-slow"
-          style={{ transformOrigin: "center" }}
-        />
+    <div className="flex flex-col items-center justify-center min-h-[200px]">
+      <div className="flex items-end justify-center gap-1 h-16">
+        <div className="w-3 bg-myGold animate-[grow_1s_ease-in-out_infinite]" />
+        <div className="w-3 bg-myGold animate-[grow_1s_ease-in-out_infinite_0.2s]" />
+        <div className="w-3 bg-myGold animate-[grow_1s_ease-in-out_infinite_0.4s]" />
+        <div className="w-3 bg-myGold animate-[grow_1s_ease-in-out_infinite_0.6s]" />
       </div>
 
-      <h2 className="text-xl font-bold text-myBlue-2 mt-4"> {t("loading")}</h2>
+      <h2 className="text-lg font-semibold text-myGold mt-4">
+        جاري التحميل ...
+      </h2>
+
+      <style>
+        {`
+          @keyframes grow {
+            0%, 100% { height: 20%; opacity: 0.4; }
+            50% { height: 100%; opacity: 1; }
+          }
+        `}
+      </style>
     </div>
   );
 };

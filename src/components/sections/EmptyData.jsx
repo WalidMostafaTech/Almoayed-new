@@ -1,18 +1,12 @@
-import { useTranslation } from "react-i18next";
-import emptyIcon from "../../assets/icons/folder-empty@3x.png";
+import { FiInbox } from "react-icons/fi";
+import { HiOutlineFolderOpen } from "react-icons/hi";
 
 const EmptyData = () => {
-  const { t } = useTranslation();
   return (
-    <div>
-      <img
-        src={emptyIcon}
-        alt="No Data"
-        className="mx-auto mb-4 w-32 lg:w-36"
-      />
-      <p className="text-center text-gray-500 text-lg font-semibold">
-        {t("noDataAvailable")}
-      </p>
+    <div className="flex flex-col items-center justify-center gap-2 p-4 h-60 text-myGold animate-pulse">
+      <HiOutlineFolderOpen className="text-[100px]" />
+
+      <p className="text-center text-lg font-semibold">لا توجد بيانات لعرضها</p>
     </div>
   );
 };

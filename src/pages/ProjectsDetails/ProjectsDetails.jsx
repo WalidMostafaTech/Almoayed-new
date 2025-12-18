@@ -1,5 +1,5 @@
 import image from "../../assets/images/project-img.jpg";
-import PageBanner from "../../components/common/PageBanner";
+import PageBanner from "../../components/cards/PageBanner";
 import ProductAbout from "./sections/ProductAbout";
 import ProjectComponents from "./sections/ProjectComponents";
 import ProjectFeatures from "./sections/ProjectFeatures";
@@ -22,9 +22,7 @@ const ProjectsDetails = () => {
       <ProjectFeatures />
       <ProjectFacilitiesAndEquipment />
       <ProjectSteps />
-      <section className="sectionPadding container">
-        <ContactUsSection />
-      </section>
+      <ContactUsSection />
     </article>
   );
 };

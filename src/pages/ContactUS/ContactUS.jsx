@@ -1,4 +1,4 @@
-import PageBanner from "../../components/common/PageBanner";
+import PageBanner from "../../components/cards/PageBanner";
 import image from "../../assets/images/project-img.jpg";
 import ContactUsSection from "../../components/sections/ContactUsSection";
 
@@ -12,9 +12,7 @@ const ContactUS = () => {
         image={image}
       />
 
-      <section className="sectionPadding container">
-        <ContactUsSection />
-      </section>
+      <ContactUsSection />
     </article>
   );
 };
