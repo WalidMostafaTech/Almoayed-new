@@ -140,7 +140,7 @@ const ContactUsSection = () => {
                 }}
                 containerClass="!w-full"
                 inputClass="!w-full !bg-myDark !text-white !border-none !rounded-lg !pr-12 !h-[42px]"
-                buttonClass="!bg-myDark !border-none hover:bg-myDark-2!"
+                buttonClass="!bg-myDark !border-none hover:bg-myDark-2! rounded-l-lg!"
                 dropdownClass="!bg-myDark !text-gray-500"
               />
             </div>

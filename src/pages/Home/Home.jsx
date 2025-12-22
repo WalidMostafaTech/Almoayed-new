@@ -8,12 +8,10 @@ import FAQS from "./sections/FAQS";
 import Testimonials from "./sections/Testimonials";
 import ContactUsSection from "../../components/sections/ContactUsSection";
 import AchievementsSection from "../../components/sections/AchievementsSection";
-import EmptyData from "../../components/sections/EmptyData";
 
 const Home = () => {
   return (
     <article>
-      <EmptyData />
       <Hero />
       <AboutSection />
       <OurServices />

@@ -1,46 +1,28 @@
-import image from "../../assets/images/project-img.jpg";
+import { useQuery } from "@tanstack/react-query";
 import PageBanner from "../../components/cards/PageBanner";
 import PartnersCard from "../../components/cards/PartnersCard";
-
-const list = [
-  {
-    id: 1,
-    icon: image,
-  },
-  {
-    id: 2,
-    icon: image,
-  },
-  {
-    id: 3,
-    icon: image,
-  },
-  {
-    id: 4,
-    icon: image,
-  },
-  {
-    id: 5,
-    icon: image,
-  },
-  {
-    id: 6,
-    icon: image,
-  },
-];
+import { getPartnersPage } from "../../services/pagesServices";
+import SkeletonPageLoading from "../../components/Loading/SkeletonLoading/SkeletonPageLoading";
 
 const Partners = () => {
+  const { data: partnersPage = [], isLoading } = useQuery({
+    queryKey: ["partnersPage"],
+    queryFn: getPartnersPage,
+  });
+
+  if (isLoading) return <SkeletonPageLoading />;
+
   return (
     <article>
       <PageBanner
         title="شركاء النجاح"
-        subTitle="رحلة واحدة.. هدف واحد."
-        description="نفخر بعلاقاتنا مع شركائنا الذين شاركونا الرؤية وصنعوا معنا نجاحات تستمر."
-        image={image}
+        subTitle={partnersPage?.partner_banner?.partner_title}
+        description={partnersPage?.partner_banner?.partner_description}
+        image={partnersPage?.partner_banner?.partner_image}
       />
 
       <section className="sectionPadding container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
-        {list.map((item) => (
+        {partnersPage?.partners?.map((item) => (
           <PartnersCard key={item.id} item={item} />
         ))}
       </section>

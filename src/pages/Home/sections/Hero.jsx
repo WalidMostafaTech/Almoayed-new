@@ -5,6 +5,8 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import { useSelector } from "react-redux";
+import { getSliders } from "../../../services/homeServices";
+import { useQuery } from "@tanstack/react-query";
 
 const list = [
   {
@@ -26,6 +28,11 @@ const list = [
 const Hero = () => {
   const { lang } = useSelector((state) => state.language);
 
+  const { data: sliders = [], isLoading } = useQuery({
+    queryKey: ["sliders"],
+    queryFn: getSliders,
+  });
+
   return (
     <section className="container">
       <Swiper
@@ -43,22 +50,22 @@ const Hero = () => {
         spaceBetween={20}
         className="relative"
       >
-        {list.map((item) => (
+        {sliders?.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative h-[60vh] xl:h-[80vh]">
+            <div className="relative h-[60vh] 2xl:h-[80vh]">
               <div className="w-full lg:w-2/3 h-full rounded-4xl overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={item.main_title}
                   className="w-full h-full object-cover"
                 />
               </div>
 
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-2 lg:items-end lg:text-end w-full lg:max-w-lg lg:ms-auto">
-                <p className="text-xl text-white">{item.subTitle}</p>
+                <p className="text-xl text-white">{item.side_title}</p>
 
                 <h1 className="text-5xl sm:text-6xl lg:text-[100px] font-bold leading-tight text-white">
-                  {item.title}{" "}
+                  {item.main_title}{" "}
                   <span className="text-myGold">{item.titleSpan}</span>
                 </h1>
               </div>

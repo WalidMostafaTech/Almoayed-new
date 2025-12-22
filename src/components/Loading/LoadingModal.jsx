@@ -1,15 +1,11 @@
 import Loader from "./Loader";
 import { createPortal } from "react-dom";
 
-const LoadingModal = ({ openModal }) => {
-  if (!openModal) return null;
-
+const LoadingModal = () => {
   return createPortal(
-    <dialog className={`modal modal-open`}>
-      <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-        <Loader />
-      </div>
-    </dialog>,
+    <section className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      <Loader />
+    </section>,
     document.body
   );
 };

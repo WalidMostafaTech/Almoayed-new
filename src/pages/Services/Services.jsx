@@ -1,58 +1,28 @@
-import image from "../../assets/images/project-img.jpg";
+import { useQuery } from "@tanstack/react-query";
 import PageBanner from "../../components/cards/PageBanner";
 import ServicesCard from "../../components/cards/ServicesCard";
-
-const list = [
-  {
-    id: 1,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-  {
-    id: 2,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-  {
-    id: 3,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-  {
-    id: 4,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-  {
-    id: 5,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-  {
-    id: 6,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-    image: image,
-    link: "/",
-  },
-];
+import { getWebServicesPage } from "../../services/pagesServices";
+import SkeletonPageLoading from "../../components/Loading/SkeletonLoading/SkeletonPageLoading";
 
 const Services = () => {
+  const { data: webServicesPage = [], isLoading } = useQuery({
+    queryKey: ["webServicesPage"],
+    queryFn: getWebServicesPage,
+  });
+
+  if (isLoading) return <SkeletonPageLoading type="cards" />;
+
   return (
     <article>
       <PageBanner
         title="خدماتنا"
-        subTitle="حلول هندسية شاملة تصنع الفرق."
-        description="نغطي جميع التخصصات الهندسية بخبرة تضمن الإبداع، الدقة، والجودة في كل مشروع."
-        image={image}
+        subTitle={webServicesPage?.extra?.webservice_banner?.title}
+        description={webServicesPage?.extra?.webservice_banner?.description}
+        image={webServicesPage?.extra?.webservice_banner?.webservice_image}
       />
 
       <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {list.map((item) => (
+        {webServicesPage?.items.map((item) => (
           <ServicesCard key={item.id} item={item} />
         ))}
       </section>

@@ -6,12 +6,12 @@ const ServicesCard = ({ item }) => {
     <div className="relative w-full h-[400px] mb-8">
       <img
         src={item.image}
-        alt={item.title}
+        alt={item.name}
         className="w-full h-full object-cover rounded-3xl"
       />
 
       <div className="absolute w-[90%] left-1/2 -translate-x-1/2 -bottom-4 bg-white text-black rounded-xl p-4">
-        <h2 className="font-bold">{item.title}</h2>
+        <h2 className="font-bold">{item.name}</h2>
 
         <Link
           to={`/service-details/${item.id}`}

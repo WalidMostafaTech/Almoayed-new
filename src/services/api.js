@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "https://backend.indusagora.com/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // ✅ إنشاء instance
 const api = axios.create({

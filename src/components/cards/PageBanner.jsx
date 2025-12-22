@@ -1,6 +1,6 @@
 import logo from "../../assets/images/logo/logo-fav.png";
 
-const PageBanner = ({ image, title, subTitle, description }) => {
+const PageBanner = ({ title, subTitle, description, image }) => {
   return (
     <section className="p-4 pt-0 lg:pt-4">
       <div className="overflow-hidden rounded-3xl lg:rounded-[50px] shadow-lg shadow-myGold/50 border border-myGold p-4 lg:p-8">

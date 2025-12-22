@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
         <RiGlobalLine />
       </button>
 
-      <LoadingModal openModal={openLoading} />
+      {openLoading && <LoadingModal />}
     </>
   );
 };
