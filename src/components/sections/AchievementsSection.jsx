@@ -1,12 +1,32 @@
 import SectionTitle from "../common/SectionTitle";
 import { useEffect, useRef, useState } from "react";
+import SkeletonPostSection from "../Loading/SkeletonLoading/SkeletonPostSection";
+import { useTranslation } from "react-i18next";
 
-const AchievementsSection = ({ data, center = false }) => {
+const AchievementsSection = ({ data, center = false, loading }) => {
+  const { t } = useTranslation();
+
   const items = [
-    { id: 1, value: data?.projects_count, label: "مشروع" },
-    { id: 2, value: data?.square_meters, label: "متر مربع أراضي مطورة" },
-    { id: 3, value: data?.years_experience, label: "عامًا من الخبرة" },
-    { id: 4, value: data?.residential_units, label: "وحدة سكنية" },
+    {
+      id: 1,
+      value: data?.projects_count,
+      label: t("AchievementsSection.projects"),
+    },
+    {
+      id: 2,
+      value: data?.square_meters,
+      label: t("AchievementsSection.squareMeters"),
+    },
+    {
+      id: 3,
+      value: data?.years_experience,
+      label: t("AchievementsSection.yearsExperience"),
+    },
+    {
+      id: 4,
+      value: data?.residential_units,
+      label: t("AchievementsSection.residentialUnits"),
+    },
   ];
 
   const sectionRef = useRef(null);
@@ -23,24 +43,30 @@ const AchievementsSection = ({ data, center = false }) => {
       },
       { threshold: 0.4 }
     );
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => observer.disconnect();
   }, []);
 
   // عد الأرقام
   useEffect(() => {
     if (!startCount) return;
+
     items.forEach((item, index) => {
       let current = 0;
       const increment = Math.ceil(item.value / 50);
+
       const interval = setInterval(() => {
         current += increment;
+
         if (current >= item.value) {
           current = item.value;
           clearInterval(interval);
         }
+
         setCounts((prev) => {
           const updated = [...prev];
           updated[index] = current;
@@ -50,11 +76,13 @@ const AchievementsSection = ({ data, center = false }) => {
     });
   }, [startCount]);
 
+  if (loading) return <SkeletonPostSection center={center} />;
+
   return (
     <section className="sectionPadding container">
       <SectionTitle
-        title="إنجازاتنا في أرقام"
-        subtitle="أرقامنا ليست مجرد أرقام, بل هي قصص نجاح ملهمة للذين آمنو بأحلامهم و جعلوها حقيقة"
+        title={t("AchievementsSection.title")}
+        subtitle={t("AchievementsSection.subtitle")}
         wide
         center={center}
       />

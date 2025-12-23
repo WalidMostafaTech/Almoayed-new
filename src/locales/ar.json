@@ -1,1 +1,129 @@
-{}
+{
+  "home": "الرئيسية",
+  "about": "من نحن",
+  "services": "خدماتنا",
+  "projects": "مشاريعنا",
+  "partners": "شركاءنا",
+  "blog": "المدونة",
+  "contact": "تواصل معنا",
+
+  "more": "المزيد",
+  "loading": "جاري التحميل",
+  "noData": "لا توجد بيانات لعرضها",
+  "phone": "الهاتف",
+  "whatsapp": "واتساب",
+
+  "footer": {
+    "quickLinks": "روابط سريعة",
+    "contactTitle": "تواصل معنا الآن",
+    "address": "الموقع",
+    "email": "راسلنا عبر البريد الإلكتروني",
+    "phone": "راسلنا عبر الجوال",
+    "followUs": "تابعنا",
+    "downloadOn": "تحميل من",
+    "getItOn": "احصل عليه من",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "copyright": "© 2025 جميع الحقوق محفوظة لمكتب روافد للاستشارات الهندسية."
+  },
+
+  "AchievementsSection": {
+    "title": "إنجازاتنا في أرقام",
+    "subtitle": "أرقامنا ليست مجرد أرقام، بل هي قصص نجاح ملهمة للذين آمنوا بأحلامهم وجعلوها حقيقة",
+    "projects": "مشروع",
+    "squareMeters": "متر مربع أراضي مطورة",
+    "yearsExperience": "عامًا من الخبرة",
+    "residentialUnits": "وحدة سكنية"
+  },
+
+  "ContactUsSection": {
+    "title": "تواصل معنا",
+    "subtitle": "فريقنا جاهز للإجابة على استفساراتك وتقديم الدعم الذي تحتاجه لتحقيق رؤيتك بكل احترافية.",
+    "placeholders": {
+      "name": "الإسم كاملا *",
+      "phone": "* رقم الجوال",
+      "email": "البريد الإلكتروني *",
+      "message": "رسالتك *"
+    },
+    "buttons": {
+      "send": "إرسال الرسالة",
+      "sending": "جاري الإرسال..."
+    },
+    "errors": {
+      "name": "الاسم مطلوب",
+      "phoneRequired": "رقم الجوال مطلوب",
+      "phoneInvalid": "رقم الجوال غير صحيح",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "البريد الإلكتروني غير صحيح",
+      "message": "الرسالة مطلوبة"
+    },
+    "feedback": {
+      "success": "تم إرسال رسالتك بنجاح، سيتم التواصل معك قريبًا",
+      "error": "حدث خطأ أثناء الإرسال، حاول مرة أخرى"
+    }
+  },
+
+  "AboutMissionValuesVision": {
+    "values": "قيمنا",
+    "vision": "رؤيتنا",
+    "mission": "رسالتنا"
+  },
+
+  "DownloadAppBanner": {
+    "alt": {
+      "mockup": "صورة التطبيق"
+    },
+    "title": "حمل تطبيق المؤيد وتابع مشاريعك بكل سهولة",
+    "description": "اكتشف تجربة عقارية متكاملة من خلال تطبيق المؤيد وتابع أحدث مشاريعنا، خدماتنا، وجميع التفاصيل في مكان واحد، بسرعة وسهولة، مع تحديثات دقيقة في أي وقت ومن أي مكان.",
+    "buttons": {
+      "appStore": {
+        "alt": "Download on App Store",
+        "topText": "Download on the",
+        "bottomText": "App Store"
+      },
+      "googlePlay": {
+        "alt": "Get it on Google Play",
+        "topText": "Get it on",
+        "bottomText": "Google Play"
+      }
+    }
+  },
+
+  "FAQS": {
+    "description": "الأسئلة الشائعة",
+    "title": "إجابات على أهم الأسئلة الشائعة",
+    "alt": {
+      "faqImage": "صورة الأسئلة الشائعة"
+    }
+  },
+
+  "OurPartners": {
+    "description": "شركاء النجاح",
+    "title": "ثقتهم بنا أساس تميزنا",
+    "linkName": "رؤية المزيد"
+  },
+
+  "OurProjects": {
+    "description": "مشاريعنا",
+    "title": "كل مشروع حكاية نجاح",
+    "subtitle": "مشاريعنا ليست مجرد عقارات، بل فرص استثمارية صُممت لتلهم الثقة، وتخلق قيمة مستدامة لكل مساحة نطورها.",
+    "linkName": "إكتشف جميع مشاريعنا"
+  },
+
+  "OurServices": {
+    "description": "خدماتنا",
+    "title": "تخصصاتنا تتحدث عن شغفنا",
+    "subtitle": "نقدم مجموعة متكاملة من الخدمات العقارية لتلبية جميع احتياجات عملائنا،",
+    "linkName": "إكتشف جميع خدماتنا"
+  },
+
+  "Testimonials": {
+    "description": "تقييمات العملاء",
+    "title": "ماذا يقول عملائنا"
+  },
+
+  "NotFound": {
+    "title": "الصفحة غير موجودة",
+    "goHome": "العودة للصفحة الرئيسية"
+  }
+}

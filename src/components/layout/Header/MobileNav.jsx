@@ -2,7 +2,7 @@ import { IoMdClose } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 import LanguageSwitcher from "../../common/LanguageSwitcher";
 
-const MobileNav = ({ links, isOpen, onClose }) => {
+const MobileNav = ({ links, isOpen, onClose, t }) => {
   return (
     <>
       {/* Overlay */}
@@ -43,7 +43,7 @@ const MobileNav = ({ links, isOpen, onClose }) => {
         <div className="flex flex-col gap-3 p-4">
           <LanguageSwitcher />
           <Link to="/contact" onClick={onClose} className="mainBtn">
-            تواصل معنا
+            {t("contact")}
           </Link>
         </div>
       </aside>

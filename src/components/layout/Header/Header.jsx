@@ -5,17 +5,20 @@ import MobileNav from "./MobileNav";
 import { TbMenuDeep } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "../../common/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { t } = useTranslation();
+
   const links = [
-    { id: 1, name: "الرئيسية", href: "/" },
-    { id: 2, name: "من نحن", href: "/about" },
-    { id: 3, name: "خدماتنا", href: "/services" },
-    { id: 4, name: "مشاريعنا", href: "/projects" },
-    { id: 5, name: "شركاء النجاح", href: "/partners" },
-    { id: 6, name: "المدونة", href: "/blog" },
+    { id: 1, name: t("home"), href: "/" },
+    { id: 2, name: t("about"), href: "/about" },
+    { id: 3, name: t("services"), href: "/services" },
+    { id: 4, name: t("projects"), href: "/projects" },
+    { id: 5, name: t("partners"), href: "/partners" },
+    { id: 6, name: t("blog"), href: "/blog" },
   ];
 
   return (
@@ -46,7 +49,7 @@ const Header = () => {
               to="/contact"
               className="mainBtn"
             >
-              تواصل معنا
+              {t("contact")}
             </Link>
           </div>
         </div>
@@ -57,6 +60,7 @@ const Header = () => {
         links={links}
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
+        t={t}
       />
     </>
   );

@@ -1,22 +1,27 @@
 import { useSelector } from "react-redux";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdLocalPhone } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const FixedSection = () => {
   const { setting } = useSelector((state) => state.setting);
+  const { t } = useTranslation();
 
   const list = [
     {
       id: 1,
-      title: "هاتف",
-      link: `tel:${(setting?.phone || "").replace(/\s/g, "")}`,
+      title: t("phone"),
+      link: `tel:${(setting?.contact?.phone || "").replace(/\s/g, "")}`,
       icon: <MdLocalPhone />,
       color: "#215274",
     },
     {
       id: 2,
-      title: "واتساب",
-      link: `https://wa.me/${(setting?.whatsapp || "").replace(/\s/g, "")}`,
+      title: t("whatsapp"),
+      link: `https://wa.me/${(setting?.social?.whatsapp || "").replace(
+        /\s/g,
+        ""
+      )}`,
       icon: <FaWhatsapp />,
       color: "#25D366",
     },

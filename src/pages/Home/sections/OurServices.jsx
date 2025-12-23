@@ -8,57 +8,60 @@ import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import ServicesCard from "../../../components/cards/ServicesCard";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const list = [
   {
     id: 1,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
   {
     id: 2,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
   {
     id: 3,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
   {
     id: 4,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
   {
     id: 5,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
   {
     id: 6,
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
     image: img,
     link: "/",
+    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
   },
 ];
 
 const OurServices = () => {
+  const { t } = useTranslation();
+
   const { lang } = useSelector((state) => state.language);
 
   return (
     <section className="sectionPadding container">
       <SectionTitle
-        description="خدماتنا"
-        title="تخصصاتنا تتحدث عن شغفنا"
-        subtitle="نقدم مجموعة متكاملة من الخدمات العقارية لتلبية جميع احتياجات عملائنا،"
+        description={t("OurServices.description")}
+        title={t("OurServices.title")}
+        subtitle={t("OurServices.subtitle")}
         link="/services"
-        linkName="إكتشف جميع خدماتنا"
+        linkName={t("OurServices.linkName")}
         wide
       />
 

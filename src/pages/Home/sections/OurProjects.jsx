@@ -8,57 +8,58 @@ import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import ProductCard from "../../../components/cards/ProductCard";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const list = [
   {
     id: 1,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
   {
     id: 2,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
   {
     id: 3,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
   {
     id: 4,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
   {
     id: 5,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
   {
     id: 6,
-    status: "تم الانتهاء",
     icon: img,
     link: "/",
+    status: "تم الانتهاء",
   },
 ];
 const OurProjects = () => {
+  const { t } = useTranslation();
   const { lang } = useSelector((state) => state.language);
-
 
   return (
     <section className="sectionPadding container">
       <SectionTitle
-        description="مشاريعنا"
-        title="كل مشروع حكاية نجاح"
-        subtitle="مشاريعنا ليست مجرد عقارات، بل فرص استثمارية صُممت لتلهم الثقة، وتخلق قيمة مستدامة لكل مساحة نطورها."
+        description={t("OurProjects.description")}
+        title={t("OurProjects.title")}
+        subtitle={t("OurProjects.subtitle")}
         link="/projects"
-        linkName="إكتشف جميع مشاريعنا"
+        linkName={t("OurProjects.linkName")}
         wide
       />
 

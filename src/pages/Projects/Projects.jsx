@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import image from "../../assets/images/project-img.jpg";
 import PageBanner from "../../components/cards/PageBanner";
 import ProductCard from "../../components/cards/ProductCard";
@@ -42,10 +43,12 @@ const list = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   return (
     <article>
       <PageBanner
-        title="مشاريعنا"
+        title={t("projects")}
         subTitle="كل مشروع حكاية نجاح."
         description="نفخر بكل إنجاز هندسي صممناه بإتقان ليبقى شاهدًا على خبرتنا وجودة عملنا."
         image={image}

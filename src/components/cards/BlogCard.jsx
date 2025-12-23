@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ item }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-2">
       <div className="w-full h-[300px] overflow-hidden rounded-2xl">
@@ -11,12 +13,17 @@ const BlogCard = ({ item }) => {
         />
       </div>
 
-      <h3 className="font-bold text-myGold text-lg">{item.title}</h3>
+      <h3 className="font-bold text-myGold text-lg line-clamp-2">
+        {item.title}
+      </h3>
 
-      <p className="text-sm">{item.description}</p>
+      <div
+        className="line-clamp-3"
+        dangerouslySetInnerHTML={{ __html: item.description }}
+      />
 
       <Link to={`/blog-details/${item.id}`} className="mainBtn mt-2">
-        المزيد
+        {t("more")}
       </Link>
     </div>
   );

@@ -2,20 +2,30 @@ import { useQuery } from "@tanstack/react-query";
 import PageBanner from "../../components/cards/PageBanner";
 import PartnersCard from "../../components/cards/PartnersCard";
 import { getPartnersPage } from "../../services/pagesServices";
-import SkeletonPageLoading from "../../components/Loading/SkeletonLoading/SkeletonPageLoading";
+import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
+import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
+import { useTranslation } from "react-i18next";
 
 const Partners = () => {
+  const { t } = useTranslation();
+
   const { data: partnersPage = [], isLoading } = useQuery({
     queryKey: ["partnersPage"],
     queryFn: getPartnersPage,
   });
 
-  if (isLoading) return <SkeletonPageLoading />;
+  if (isLoading)
+    return (
+      <article>
+        <SkeletonPageBanner />
+        <SkeletonCards />
+      </article>
+    );
 
   return (
     <article>
       <PageBanner
-        title="شركاء النجاح"
+        title={t("partners")}
         subTitle={partnersPage?.partner_banner?.partner_title}
         description={partnersPage?.partner_banner?.partner_description}
         image={partnersPage?.partner_banner?.partner_image}

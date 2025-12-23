@@ -23,18 +23,17 @@ const ServiceAbout = () => {
         </Link>
       </div>
 
-      <Link
-        to="/"
-        target="_blank"
-        className="min-h-[300px] object-cover overflow-hidden rounded-4xl relative"
-      >
-        <img src={image} alt="about" className="w-full h-full object-cover" />
-        <img
-          src={youtubeIcon}
-          alt="about"
-          className="w-12 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        />
-      </Link>
+      <div className="min-h-[300px] object-cover overflow-hidden rounded-4xl relative">
+        <Link
+          to={"/"}
+          target="_blanc"
+          className="absolute inset-0 z-20 flex items-center justify-center"
+        >
+          <img src={youtubeIcon} alt="youtube" className="w-12" />
+        </Link>
+
+        <img src={image} alt="about-service" className="w-full h-full object-cover" />
+      </div>
     </section>
   );
 };

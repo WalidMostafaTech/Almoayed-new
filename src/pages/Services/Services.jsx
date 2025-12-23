@@ -2,20 +2,30 @@ import { useQuery } from "@tanstack/react-query";
 import PageBanner from "../../components/cards/PageBanner";
 import ServicesCard from "../../components/cards/ServicesCard";
 import { getWebServicesPage } from "../../services/pagesServices";
-import SkeletonPageLoading from "../../components/Loading/SkeletonLoading/SkeletonPageLoading";
+import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
+import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const { data: webServicesPage = [], isLoading } = useQuery({
     queryKey: ["webServicesPage"],
     queryFn: getWebServicesPage,
   });
 
-  if (isLoading) return <SkeletonPageLoading type="cards" />;
+  if (isLoading)
+    return (
+      <article>
+        <SkeletonPageBanner />
+        <SkeletonCards cardNum={4} size="lg" />
+      </article>
+    );
 
   return (
     <article>
       <PageBanner
-        title="خدماتنا"
+        title={t("services")}
         subTitle={webServicesPage?.extra?.webservice_banner?.title}
         description={webServicesPage?.extra?.webservice_banner?.description}
         image={webServicesPage?.extra?.webservice_banner?.webservice_image}

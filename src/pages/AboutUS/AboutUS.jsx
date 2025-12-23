@@ -4,20 +4,30 @@ import AchievementsSection from "../../components/sections/AchievementsSection";
 import AboutMissionValuesVision from "./sections/AboutMissionValuesVision";
 import { useQuery } from "@tanstack/react-query";
 import { getAboutUsPage } from "../../services/pagesServices";
-import SkeletonPageLoading from "../../components/Loading/SkeletonLoading/SkeletonPageLoading";
+import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
+import SkeletonPostSection from "../../components/Loading/SkeletonLoading/SkeletonPostSection";
+import { useTranslation } from "react-i18next";
 
 const AboutUS = () => {
+  const { t } = useTranslation();
+
   const { data: aboutUsPage = [], isLoading } = useQuery({
     queryKey: ["aboutUsPage"],
     queryFn: getAboutUsPage,
   });
 
-  if (isLoading) return <SkeletonPageLoading type="post" />;
+  if (isLoading)
+    return (
+      <article>
+        <SkeletonPageBanner />
+        <SkeletonPostSection center />
+      </article>
+    );
 
   return (
     <article>
       <PageBanner
-        title="من نحن"
+        title={t("about")}
         subTitle={aboutUsPage?.main_section?.title}
         description={aboutUsPage?.main_section?.description}
         image={aboutUsPage?.main_section?.home_image}

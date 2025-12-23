@@ -15,15 +15,15 @@ export const fetchSetting = createAsyncThunk(
   }
 );
 
+const initialState = {
+  setting: {},
+  loading: false,
+  error: null,
+};
+
 const appSetting = createSlice({
   name: "setting",
-  initialState: {
-    setting: {},
-    cities: [],
-    terms: "",
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

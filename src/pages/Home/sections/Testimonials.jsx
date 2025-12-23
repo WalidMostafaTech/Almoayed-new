@@ -1,6 +1,4 @@
 import SectionTitle from "../../../components/common/SectionTitle";
-import img from "../../../assets/images/project-img.jpg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -8,81 +6,28 @@ import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import TestimonialsCard from "../../../components/cards/TestimonialsCard";
 import { useSelector } from "react-redux";
-
-const list = [
-  {
-    id: 1,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 2,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 3.5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 3,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 4,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 4,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 5,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 6,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-  {
-    id: 7,
-    image: img,
-    name: "Mohammed Ayman",
-    date: "من 5 أشهر",
-    rate: 5,
-    content:
-      "تعاملت مع شركة المؤيد لتسويق مشروعي العقاري، وكانت تجربة ممتازة من البداية للنهاية. الفريق محترف، متعاون، ويفهم احتياجات العميل بدقة. بفضل استراتيجياتهم التسويقية قدرنا نوصل للعملاء المثاليين في وقت قصير، وحققنا نتائج أفضل مما توقعنا. أنصح أي مستثمر أو مالك مشروع بالتعامل معهم بكل ثقة.",
-  },
-];
+import { getTestimonials } from "../../../services/homeServices";
+import { useQuery } from "@tanstack/react-query";
+import SkeletonCards from "../../../components/Loading/SkeletonLoading/SkeletonCards";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+
   const { lang } = useSelector((state) => state.language);
+
+  const { data: testimonials = [], isLoading } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: getTestimonials,
+  });
+
+  if (isLoading) return <SkeletonCards cardNum={4} size="lg" />;
 
   return (
     <section className="sectionPadding container">
       <SectionTitle
-        description="تقييمات العملاء"
-        title="ماذا يقول عملائنا"
+        description={t("Testimonials.description")}
+        title={t("Testimonials.title")}
         wide
       />
 
@@ -109,7 +54,7 @@ const Testimonials = () => {
           },
         }}
       >
-        {list.map((item) => (
+        {testimonials?.map((item) => (
           <SwiperSlide key={item.id} className="mt-8">
             <TestimonialsCard item={item} />
           </SwiperSlide>

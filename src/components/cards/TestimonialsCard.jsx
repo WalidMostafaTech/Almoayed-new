@@ -1,17 +1,10 @@
-import icon from "../../assets/icons/google-play-icon.png";
 import { renderStars } from "../../utils/renderStars";
+import dayjs from "dayjs";
 
 const TestimonialsCard = ({ item }) => {
   return (
     <div className="text-xs">
-      <div className="bg-white p-4 rounded-xl space-y-4">
-        <div className="flex items-center gap-2">
-          <img src={icon} alt="" className="w-5" />
-          <p className="text-xs text-stone-500">
-            تم النشر في: <span className="font-bold text-myGold">جوجل</span>
-          </p>
-        </div>
-
+      <div className="bg-white p-4 rounded-xl flex flex-col justify-between gap-4 min-h-[150px]">
         <p className="text-black leading-relaxed">{item.content}</p>
 
         <div className="flex items-center justify-end gap-1" dir="ltr">
@@ -33,7 +26,7 @@ const TestimonialsCard = ({ item }) => {
 
         <div>
           <h2 className="text-sm font-bold">{item.name}</h2>
-          <p className="text-xs">{item.date}</p>
+          <p> {dayjs(item.created_at).fromNow()}</p>
         </div>
       </div>
     </div>

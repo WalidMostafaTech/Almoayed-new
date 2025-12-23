@@ -12,7 +12,25 @@ export const getPartnersPage = async () => {
 
 export const getWebServicesPage = async () => {
   const { data } = await api.get("/webservices");
-  return data|| [];
+  return data || [];
 };
 
+export const getWebServicesDetailsPage = async (id) => {
+  const { data } = await api.get(`/webservices/${id}`);
+  return data?.data || [];
+};
 
+export const getBlogs = async () => {
+  const { data } = await api.get("/blogs");
+  return data || [];
+};
+
+export const getBlogDetailsPage = async (id) => {
+  const { data } = await api.get(`/blogs/${id}`);
+  return data?.data || [];
+};
+
+export const getContactPage = async () => {
+  const { data } = await api.get("/contact-settings");
+  return data?.data || [];
+};

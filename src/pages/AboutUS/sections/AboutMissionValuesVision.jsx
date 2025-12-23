@@ -1,20 +1,23 @@
 import logo from "../../../assets/images/logo/logo-fav.png";
+import { useTranslation } from "react-i18next";
 
-const AboutMissionValuesVision = (data) => {
+const AboutMissionValuesVision = ({ data }) => {
+  const { t } = useTranslation();
+
   const list = [
     {
       id: 1,
-      title: "قيمنا",
+      title: t("AboutMissionValuesVision.values"),
       description: data?.values,
     },
     {
       id: 2,
-      title: "رؤيتنا",
+      title: t("AboutMissionValuesVision.vision"),
       description: data?.vision,
     },
     {
       id: 3,
-      title: "رسالتنا",
+      title: t("AboutMissionValuesVision.mission"),
       description: data?.mission,
     },
   ];

@@ -1,57 +1,38 @@
-import image from "../../assets/images/project-img.jpg";
 import PageBanner from "../../components/cards/PageBanner";
 import BlogCard from "../../components/cards/BlogCard";
-
-const list = [
-  {
-    id: 1,
-    title: "كيف تختار المشروع العقاري المناسب؟",
-    description:
-      "تعرف على أهم العوامل التي تساعدك في اتخاذ قرار استثماري ناجح وذكي.",
-    image: image,
-  },
-  {
-    id: 2,
-    title: "كيف تختار المشروع العقاري المناسب؟",
-    description:
-      "تعرف على أهم العوامل التي تساعدك في اتخاذ قرار استثماري ناجح وذكي.",
-    image: image,
-  },
-  {
-    id: 3,
-    title: "كيف تختار المشروع العقاري المناسب؟",
-    description:
-      "تعرف على أهم العوامل التي تساعدك في اتخاذ قرار استثماري ناجح وذكي.",
-    image: image,
-  },
-  {
-    id: 4,
-    title: "كيف تختار المشروع العقاري المناسب؟",
-    description:
-      "تعرف على أهم العوامل التي تساعدك في اتخاذ قرار استثماري ناجح وذكي.",
-    image: image,
-  },
-  {
-    id: 5,
-    title: "كيف تختار المشروع العقاري المناسب؟",
-    description:
-      "تعرف على أهم العوامل التي تساعدك في اتخاذ قرار استثماري ناجح وذكي.",
-    image: image,
-  },
-];
+import { getBlogs } from "../../services/pagesServices";
+import { useQuery } from "@tanstack/react-query";
+import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
+import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
+import { useTranslation } from "react-i18next";
 
 const Blog = () => {
+  const { t } = useTranslation();
+
+  const { data: blogs = [], isLoading } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getBlogs,
+  });
+
+  if (isLoading)
+    return (
+      <article>
+        <SkeletonPageBanner />
+        <SkeletonCards cardNum={4} size="lg" />
+      </article>
+    );
+
   return (
     <article>
       <PageBanner
-        title="المدونة"
-        subTitle="اكتشف أحدث الأخبار والرؤى في عالم التطوير العقاري."
-        description="نقدّم لك محتوى متخصص يساعدك على فهم السوق، متابعة الاتجاهات الجديدة، واتخاذ قرارات عقارية أكثر وعيًا وثقة."
-        image={image}
+        title={t("blog")}
+        subTitle={blogs?.extra?.blog_banner?.title}
+        description={blogs?.extra?.blog_banner?.description}
+        image={blogs?.extra?.blog_banner?.blog_image}
       />
 
       <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {list.map((item) => (
+        {blogs?.items.map((item) => (
           <BlogCard key={item.id} item={item} />
         ))}
       </section>

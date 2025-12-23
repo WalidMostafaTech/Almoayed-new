@@ -1,1 +1,129 @@
-{}
+{
+  "home": "Home",
+  "about": "About Us",
+  "services": "Our Services",
+  "projects": "Our Projects",
+  "partners": "Our Partners",
+  "blog": "Blog",
+  "contact": "Contact Us",
+
+  "more": "More",
+  "loading": "Loading",
+  "noData": "No data to show",
+  "phone": "Phone",
+  "whatsapp": "WhatsApp",
+
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact Us Now",
+    "address": "Address",
+    "email": "Email Us",
+    "phone": "Call Us",
+    "followUs": "Follow Us",
+    "downloadOn": "Download on",
+    "getItOn": "Get it on",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "copyright": "© 2025 All rights reserved to Rawafed Engineering Consultancy."
+  },
+
+  "AchievementsSection": {
+    "title": "Our Achievements in Numbers",
+    "subtitle": "Our numbers are not just statistics, but inspiring success stories of those who believed in their dreams and made them a reality",
+    "projects": "Projects",
+    "squareMeters": "Developed Land (sqm)",
+    "yearsExperience": "Years of Experience",
+    "residentialUnits": "Residential Units"
+  },
+
+  "ContactUsSection": {
+    "title": "Contact Us",
+    "subtitle": "Our team is ready to answer your questions and provide the support you need to achieve your vision professionally.",
+    "placeholders": {
+      "name": "Full Name *",
+      "phone": "* Phone Number",
+      "email": "Email *",
+      "message": "Your Message *"
+    },
+    "buttons": {
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "errors": {
+      "name": "Name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "message": "Message is required"
+    },
+    "feedback": {
+      "success": "Your message has been sent successfully, we will contact you soon",
+      "error": "An error occurred while sending, please try again"
+    }
+  },
+
+  "AboutMissionValuesVision": {
+    "values": "Our Values",
+    "vision": "Our Vision",
+    "mission": "Our Mission"
+  },
+
+  "DownloadAppBanner": {
+    "alt": {
+      "mockup": "App Mockup"
+    },
+    "title": "Download Al-Moayyad App and Track Your Projects Easily",
+    "description": "Discover a complete real estate experience through the Al-Moayyad app and follow our latest projects, services, and all details in one place, quickly and easily, with precise updates anytime, anywhere.",
+    "buttons": {
+      "appStore": {
+        "alt": "Download on App Store",
+        "topText": "Download on the",
+        "bottomText": "App Store"
+      },
+      "googlePlay": {
+        "alt": "Get it on Google Play",
+        "topText": "Get it on",
+        "bottomText": "Google Play"
+      }
+    }
+  },
+
+  "FAQS": {
+    "description": "Frequently Asked Questions",
+    "title": "Answers to the Most Common Questions",
+    "alt": {
+      "faqImage": "FAQ Image"
+    }
+  },
+
+  "OurPartners": {
+    "description": "Our Partners",
+    "title": "Their Trust Is the Foundation of Our Excellence",
+    "linkName": "View More"
+  },
+
+  "OurProjects": {
+    "description": "Our Projects",
+    "title": "Every Project Is a Success Story",
+    "subtitle": "Our projects are not just properties, but investment opportunities designed to inspire confidence and create sustainable value for every space we develop.",
+    "linkName": "Explore All Projects"
+  },
+
+  "OurServices": {
+    "description": "Our Services",
+    "title": "Our Expertise Speaks Our Passion",
+    "subtitle": "We offer a comprehensive range of real estate services to meet all the needs of our clients.",
+    "linkName": "Explore All Services"
+  },
+
+  "Testimonials": {
+    "description": "Customer Reviews",
+    "title": "What Our Clients Say"
+  },
+
+  "NotFound": {
+    "title": "Page Not Found",
+    "goHome": "Go Home"
+  }
+}

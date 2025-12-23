@@ -1,4 +1,3 @@
-import img from "../../../assets/images/project-img.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 
@@ -7,23 +6,7 @@ import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import { useSelector } from "react-redux";
 import { getSliders } from "../../../services/homeServices";
 import { useQuery } from "@tanstack/react-query";
-
-const list = [
-  {
-    id: 1,
-    title: "رقى يصنع",
-    titleSpan: "الفارق",
-    subTitle: "اكتشف عالم التسويق العقاري معنا",
-    image: img,
-  },
-  {
-    id: 2,
-    title: "رقى يصنع",
-    titleSpan: "الفارق",
-    subTitle: "اكتشف عالم التسويق العقاري معنا",
-    image: img,
-  },
-];
+import SkeletonHero from "../../../components/Loading/SkeletonLoading/SkeletonHero";
 
 const Hero = () => {
   const { lang } = useSelector((state) => state.language);
@@ -32,6 +15,8 @@ const Hero = () => {
     queryKey: ["sliders"],
     queryFn: getSliders,
   });
+
+  if (isLoading) return <SkeletonHero />;
 
   return (
     <section className="container">
@@ -53,7 +38,8 @@ const Hero = () => {
         {sliders?.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="relative h-[60vh] 2xl:h-[80vh]">
-              <div className="w-full lg:w-2/3 h-full rounded-4xl overflow-hidden">
+              <div className="w-full lg:w-2/3 h-full rounded-4xl overflow-hidden relative">
+                <div className="absolute inset-0 bg-black/40" />
                 <img
                   src={item.image}
                   alt={item.main_title}
@@ -61,7 +47,7 @@ const Hero = () => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-2 lg:items-end lg:text-end w-full lg:max-w-lg lg:ms-auto">
+              <div className="absolute z-10 inset-0 flex flex-col items-center justify-center text-center space-y-2 lg:items-end lg:text-end w-full lg:max-w-lg lg:ms-auto">
                 <p className="text-xl text-white">{item.side_title}</p>
 
                 <h1 className="text-5xl sm:text-6xl lg:text-[100px] font-bold leading-tight text-white">

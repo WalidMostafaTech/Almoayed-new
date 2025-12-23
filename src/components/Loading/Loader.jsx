@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Loader = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[200px]">
       <div className="flex items-end justify-center gap-1 h-16">
@@ -8,9 +12,7 @@ const Loader = () => {
         <div className="w-3 bg-myGold animate-[grow_1s_ease-in-out_infinite_0.6s]" />
       </div>
 
-      <h2 className="text-lg font-semibold text-myGold mt-4">
-        جاري التحميل ...
-      </h2>
+      <h2 className="text-lg font-semibold text-myGold mt-4">{t("loading")}</h2>
 
       <style>
         {`

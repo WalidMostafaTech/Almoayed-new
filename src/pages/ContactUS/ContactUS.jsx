@@ -1,15 +1,34 @@
 import PageBanner from "../../components/cards/PageBanner";
-import image from "../../assets/images/project-img.jpg";
 import ContactUsSection from "../../components/sections/ContactUsSection";
+import { useQuery } from "@tanstack/react-query";
+import { getContactPage } from "../../services/pagesServices";
+import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
+import SkeletonContactUs from "../../components/Loading/SkeletonLoading/SkeletonContactUs";
+import { useTranslation } from "react-i18next";
 
 const ContactUS = () => {
+  const { t } = useTranslation();
+
+  const { data: contactUsPage = [], isLoading } = useQuery({
+    queryKey: ["contactUsPage"],
+    queryFn: getContactPage,
+  });
+
+  if (isLoading)
+    return (
+      <article>
+        <SkeletonPageBanner />
+        <SkeletonContactUs />
+      </article>
+    );
+
   return (
     <article>
       <PageBanner
-        title="تواصل معنا"
-        subTitle="تواصل معنا وابدأ رحلتك العقارية بثقة"
-        description="نسعد بالإجابة عن استفساراتك ودعمك في كل خطوة نحو مشروعك القادم."
-        image={image}
+        title={t("contact")}
+        subTitle={contactUsPage?.title}
+        description={contactUsPage?.description}
+        image={contactUsPage?.contact_image}
       />
 
       <ContactUsSection />

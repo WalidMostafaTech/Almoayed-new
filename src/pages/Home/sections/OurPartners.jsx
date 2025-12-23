@@ -8,6 +8,7 @@ import "swiper/css";
 import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import PartnersCard from "../../../components/cards/PartnersCard";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const list = [
   {
@@ -43,17 +44,18 @@ const list = [
     icon: img,
   },
 ];
+
 const OurPartners = () => {
   const { lang } = useSelector((state) => state.language);
-
+  const { t } = useTranslation();
 
   return (
     <section className="sectionPadding container">
       <SectionTitle
-        description="شركاء النجاح"
-        title="ثقتهم بنا اساس تميزنا"
+        description={t("OurPartners.description")}
+        title={t("OurPartners.title")}
         link="/partners"
-        linkName="رؤية المزيد"
+        linkName={t("OurPartners.linkName")}
         wide
       />
 
