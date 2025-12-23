@@ -6,7 +6,7 @@ const ProductCard = ({ item }) => {
   return (
     <div className="rounded-xl border border-myGold shadow-md shadow-myGold/50 p-4 flex flex-col items-center gap-4 bg-myDark-2">
       <img
-        src={item.icon}
+        src={item.logo}
         alt={item.status}
         className="w-full h-32 object-contain"
       />

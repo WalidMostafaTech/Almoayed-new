@@ -41,7 +41,7 @@ const list = [
   },
 ];
 
-const ServiceAnotherServices = () => {
+const ServiceAnotherServices = ({ data }) => {
   return (
     <section className="container sectionPadding space-y-4">
       <SectionTitle
@@ -51,8 +51,11 @@ const ServiceAnotherServices = () => {
       />
 
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {list.map((item) => (
-          <ServicesCard key={item.id} item={item} />
+        {data.map((item) => (
+          <ServicesCard
+            key={item.id}
+            item={{ name: item.name, image: item.thumbnail, id: item.id }}
+          />
         ))}
       </section>
     </section>

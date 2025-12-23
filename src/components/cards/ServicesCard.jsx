@@ -4,11 +4,13 @@ import { GoArrowLeft } from "react-icons/go";
 const ServicesCard = ({ item }) => {
   return (
     <div className="relative w-full h-[400px] mb-8">
-      <img
-        src={item.image}
-        alt={item.name}
-        className="w-full h-full object-cover rounded-3xl"
-      />
+      <div className="w-full h-full overflow-hidden rounded-3xl bg-myDark-2">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       <div className="absolute w-[90%] left-1/2 -translate-x-1/2 -bottom-4 bg-white text-black rounded-xl p-4">
         <h2 className="font-bold">{item.name}</h2>

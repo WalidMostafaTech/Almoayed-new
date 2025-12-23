@@ -7,9 +7,11 @@ import "react-phone-input-2/lib/style.css";
 import { sendContact } from "../../services/mainServices";
 import { useMutation } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const ContactUsSection = () => {
   const { t } = useTranslation();
+  const { setting } = useSelector((state) => state.setting);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -101,13 +103,15 @@ const ContactUsSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 rounded-4xl overflow-hidden w-full max-w-7xl mx-auto">
         {/* Map */}
         <div className="col-span-1 lg:col-span-5 min-h-[500px] bg-white order-2 lg:order-1 rounded-t-4xl lg:rounded-t-none overflow-hidden">
-          <iframe
+          {/* <iframe
             title="map"
             src="https://www.google.com/maps?q=25.2048,55.2708&z=15&output=embed"
             className="w-full h-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          />
+          /> */}
+
+          <div dangerouslySetInnerHTML={{ __html: setting?.contact?.map }} />
         </div>
 
         {/* Form */}

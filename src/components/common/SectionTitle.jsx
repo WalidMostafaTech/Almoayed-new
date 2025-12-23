@@ -10,6 +10,7 @@ const SectionTitle = ({
   icon = true,
   wide = false,
   center = false,
+  html = false,
 }) => {
   return (
     <div
@@ -24,7 +25,10 @@ const SectionTitle = ({
         {title && (
           <h2 className="text-3xl lg:text-4xl font-bold capitalize">{title}</h2>
         )}
-        {subtitle && <p>{subtitle}</p>}
+        {/* {subtitle && <p>{subtitle}</p>} */}
+        {html
+          ? subtitle && <div dangerouslySetInnerHTML={{ __html: subtitle }} />
+          : subtitle && <p>{subtitle}</p>}
       </hgroup>
 
       {linkName && (

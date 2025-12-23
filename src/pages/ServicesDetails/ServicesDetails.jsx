@@ -35,9 +35,9 @@ const ServicesDetails = () => {
         image={webServicesDetailsPage?.webservice_banner?.webservice_image}
       />
 
-      <ServiceAbout />
-      <ServiceServices />
-      <ServiceAnotherServices />
+      <ServiceAbout data={webServicesDetailsPage?.service} />
+      <ServiceServices data={webServicesDetailsPage?.service} />
+      <ServiceAnotherServices data={webServicesDetailsPage?.related_services} />
     </article>
   );
 };

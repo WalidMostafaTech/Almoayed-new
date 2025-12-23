@@ -34,3 +34,13 @@ export const getContactPage = async () => {
   const { data } = await api.get("/contact-settings");
   return data?.data || [];
 };
+
+export const getProjectPage = async () => {
+  const { data } = await api.get("/projects");
+  return data || [];
+};
+
+export const getProjectDetailsPage = async (id) => {
+  const { data } = await api.get(`/projects/${id}`);
+  return data?.data || [];
+};

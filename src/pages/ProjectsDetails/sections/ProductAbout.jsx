@@ -2,44 +2,35 @@ import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/common/SectionTitle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const ProductAbout = () => {
+const ProductAbout = ({ data }) => {
   return (
-    <section className="container sectionPadding grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
+    <section className="container sectionPadding">
       <div>
         <SectionTitle
           wide
-          description="مشروع المؤيد"
+          description={data?.name}
           title="نبذة عن المشروع"
-          subtitle="يعد مشروع المؤيد أحد المشاريع العقارية المتكاملة التي تهدف إلى تقديم بيئة متطورة تجمع بين الراحة، الأمان، والاستدامة. تم تنفيذ المشروع وفق أعلى المعايير الهندسية ليواكب تطلعات السوق العقاري ويحقق قيمة حقيقية للمستثمرين والسكان على حد سواء."
+          subtitle={data?.description}
+          html
         />
 
         <div className="flex flex-wrap gap-4 mt-4">
-          <Link to="/" className="mainBtn">
+          <Link
+            to={data?.general_profile_file}
+            target="_blank"
+            className="mainBtn"
+          >
             تحميل البروفايل العام <AiOutlineDownload />
           </Link>
-          <Link to="/" className="mainBtn">
+          <Link
+            to={data?.residential_profile_file}
+            target="_blank"
+            className="mainBtn"
+          >
             تحميل البروفايل السكنى
             <AiOutlineDownload />
           </Link>
         </div>
-      </div>
-
-      <div>
-        <p>
-          رياد هو مشروع عمراني متكامل تقدّمه مجموعة المؤيد للتسويق العقاري، حيث
-          يتناغم فيه نمط الحياة الحديثة في بيئة واحدة تضم السكن والعمل والتجارة
-          والرفاهية. يمثل المشروع نموذجًا مبتكرًا يجمع بين استخدامات متعددة في
-          مخطط واحد متوازن، ليخلق تواصلًا سلسًا بين خصوصية المعيشة وانسيابية
-          الحركة وجودة الحياة اليومية في بيئة حضرية نابضة. يمتد مشروع رياد على
-          مساحة واسعة تضم أكثر من 40 مبنى متنوع الاستخدامات، صُمّمت لاستيعاب
-          احتياجات الأفراد والمستثمرين والشركات، مع مراعاة النمو العمراني الحديث
-          ودعم فرص الاستثمار المستدام. يقع المشروع في موقع استراتيجي شمال
-          المدينة، على مقربة من الطرق الرئيسية والمراكز الحيوية، مما يجعل رياد
-          وجهة مثالية للسكن والاستثمار، ويمنح سكانه وزواره وصولًا سريعًا لمختلف
-          الخدمات. تضم مخططات المشروع وحدات سكنية عصرية، ومناطق تجارية، ومساحات
-          مكتبية، ومرافق للضيافة، ومطاعم، ومقاهي، إلى جانب مساحات خضراء تتجاوز
-          70,000 متر مربع تعزز جودة الحياة وتوفّر تجربة معيشية متكاملة.
-        </p>
       </div>
     </section>
   );
