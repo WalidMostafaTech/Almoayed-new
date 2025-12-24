@@ -1,21 +1,24 @@
 import PageBanner from "../../components/cards/PageBanner";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
-import { RxCopy } from "react-icons/rx";
+import { RxCopy, RxCheck } from "react-icons/rx";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getBlogDetailsPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
-import SkeletonDetailsSection from "../../components/Loading/SkeletonLoading/SkeletonDetailsSection";
 import dayjs from "dayjs";
 import { useTranslation } from "react-i18next";
 import SeoManager from "../../utils/SeoManager";
+import { useState } from "react";
+import SkeletonContactUs from "../../components/Loading/SkeletonLoading/SkeletonContactUs";
 
 const BlogDetails = () => {
   const { id } = useParams();
 
   const { t } = useTranslation();
+
+  const [copied, setCopied] = useState(false);
 
   const { data: blogDetails = [], isLoading } = useQuery({
     queryKey: ["blogDetails", id],
@@ -27,7 +30,7 @@ const BlogDetails = () => {
     return (
       <article>
         <SkeletonPageBanner />
-        <SkeletonDetailsSection />
+        <SkeletonContactUs />
       </article>
     );
 
@@ -56,62 +59,69 @@ const BlogDetails = () => {
               className="w-full h-full object-cover rounded-xl"
             />
 
-            <div className="flex items-center justify-around gap-2 bg-white rounded-xl p-4 text-myGold">
-              <p>{t("shareBlog")} :</p>
+            <div className="space-y-2 bg-white rounded-xl p-4 text-myGold">
+              <div className="flex items-center justify-around gap-2">
+                <p>{t("shareBlog")} :</p>
 
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
-                  onClick={() =>
-                    window.open(
-                      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                        window.location.href
-                      )}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  <FaLinkedinIn />
-                </span>
+                <div className="flex items-center gap-2">
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
+                    onClick={() =>
+                      window.open(
+                        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                          window.location.href
+                        )}`,
+                        "_blank"
+                      )
+                    }
+                  >
+                    <FaLinkedinIn />
+                  </span>
 
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
-                  onClick={() =>
-                    window.open(
-                      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                        window.location.href
-                      )}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  <FaFacebookF />
-                </span>
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
+                    onClick={() =>
+                      window.open(
+                        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                          window.location.href
+                        )}`,
+                        "_blank"
+                      )
+                    }
+                  >
+                    <FaFacebookF />
+                  </span>
 
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
-                  onClick={() =>
-                    window.open(
-                      `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                        window.location.href
-                      )}&text=${encodeURIComponent(blog?.title)}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  <FaXTwitter />
-                </span>
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
+                    onClick={() =>
+                      window.open(
+                        `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                          window.location.href
+                        )}&text=${encodeURIComponent(blog?.title)}`,
+                        "_blank"
+                      )
+                    }
+                  >
+                    <FaXTwitter />
+                  </span>
 
-                <span
-                  className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
-                  onClick={() => {
-                    navigator.clipboard.writeText(window.location.href);
-                    console.log("تم نسخ الرابط");
-                  }}
-                >
-                  <RxCopy />
-                </span>
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer hover:bg-myGold hover:text-white transition"
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      setCopied(true); // غيرنا الحالة للنسخ
+                      setTimeout(() => setCopied(false), 3000); // بعد 3 ثواني نرجعها
+                    }}
+                  >
+                    {copied ? <RxCheck className="text-xl" /> : <RxCopy />}
+                  </span>
+                </div>
               </div>
+
+              <p className={`text-center font-semibold flex items-center justify-center gap-1 ${copied ? "h-6" : "h-0" } duration-300 overflow-hidden`}>
+                {t("linkCopied")} <RxCheck className="text-2xl" />
+              </p>
             </div>
           </div>
 
