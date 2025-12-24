@@ -49,7 +49,7 @@ const BlogDetails = () => {
           />
 
           <div className="flex items-center justify-around gap-2 bg-white rounded-xl p-4 text-myGold">
-            <p>مشاركة المقال:</p>
+            <p>{t("shareBlog")} :</p>
 
             <div className="flex items-center gap-2">
               <span className="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer">
@@ -77,7 +77,7 @@ const BlogDetails = () => {
 
           <p className="py-2 px-4 rounded-md bg-white text-black flex items-center gap-2 w-fit text-sm">
             <FaRegCalendarAlt className="text-yellow-500 text-lg" />
-            <p>تاريخ النشر :</p>
+            <p>{t("dateBlog")} :</p>
             {dayjs(blog?.created_at).format("DD-MM-YYYY")}
           </p>
 

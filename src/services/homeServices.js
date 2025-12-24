@@ -1,5 +1,10 @@
 import api from "./api";
 
+export const getHome = async () => {
+  const { data } = await api.get("/home");
+  return data?.data || [];
+};
+
 export const getSliders = async () => {
   const { data } = await api.get("/sliders");
   return data?.data || [];

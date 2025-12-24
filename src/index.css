@@ -3,7 +3,8 @@
 @theme {
   --color-myDark: #32343b;
   --color-myDark-2: #3b3e44;
-  --color-myGold: #c2b59b;
+  /* --color-myGold: #c2b59b; */
+  --color-myGold: #998866;
 }
 
 /* remove input number arrows */

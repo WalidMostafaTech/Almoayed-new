@@ -1,5 +1,4 @@
 import SectionTitle from "../../../components/common/SectionTitle";
-import img from "../../../assets/images/logo/logo.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -9,45 +8,13 @@ import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import PartnersCard from "../../../components/cards/PartnersCard";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import SkeletonCards from "../../../components/Loading/SkeletonLoading/SkeletonCards";
 
-const list = [
-  {
-    id: 1,
-    icon: img,
-  },
-  {
-    id: 2,
-    icon: img,
-  },
-  {
-    id: 3,
-    icon: img,
-  },
-  {
-    id: 4,
-    icon: img,
-  },
-  {
-    id: 5,
-    icon: img,
-  },
-  {
-    id: 6,
-    icon: img,
-  },
-  {
-    id: 7,
-    icon: img,
-  },
-  {
-    id: 8,
-    icon: img,
-  },
-];
-
-const OurPartners = () => {
+const OurPartners = ({ data, loading }) => {
   const { lang } = useSelector((state) => state.language);
   const { t } = useTranslation();
+
+  if (loading) return <SkeletonCards cardNum={6} />;
 
   return (
     <section className="sectionPadding container">
@@ -85,7 +52,7 @@ const OurPartners = () => {
           },
         }}
       >
-        {list.map((item) => (
+        {data?.map((item) => (
           <SwiperSlide key={item.id} className="my-8">
             <PartnersCard item={item} />
           </SwiperSlide>

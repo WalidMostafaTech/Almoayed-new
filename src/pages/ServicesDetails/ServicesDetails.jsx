@@ -29,7 +29,7 @@ const ServicesDetails = () => {
   return (
     <article>
       <PageBanner
-        title="المؤيد للمصاعد"
+        // title="المؤيد للمصاعد"
         subTitle={webServicesDetailsPage?.webservice_banner?.title}
         description={webServicesDetailsPage?.webservice_banner?.description}
         image={webServicesDetailsPage?.webservice_banner?.webservice_image}

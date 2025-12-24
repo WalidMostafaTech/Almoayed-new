@@ -102,7 +102,7 @@ const ContactUsSection = () => {
     <section className="sectionPadding container">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 rounded-4xl overflow-hidden w-full max-w-7xl mx-auto">
         {/* Map */}
-        <div className="col-span-1 lg:col-span-5 min-h-[500px] bg-white order-2 lg:order-1 rounded-t-4xl lg:rounded-t-none overflow-hidden">
+        <div className="col-span-1 lg:col-span-5 min-h-[500px] order-2 lg:order-1 rounded-t-4xl lg:rounded-t-none overflow-hidden bg-white">
           {/* <iframe
             title="map"
             src="https://www.google.com/maps?q=25.2048,55.2708&z=15&output=embed"

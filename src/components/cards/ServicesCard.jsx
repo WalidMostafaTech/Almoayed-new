@@ -6,7 +6,7 @@ const ServicesCard = ({ item }) => {
     <div className="relative w-full h-[400px] mb-8">
       <div className="w-full h-full overflow-hidden rounded-3xl bg-myDark-2">
         <img
-          src={item.image}
+          src={item.thumbnail}
           alt={item.name}
           className="w-full h-full object-cover"
         />

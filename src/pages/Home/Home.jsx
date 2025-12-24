@@ -10,9 +10,15 @@ import ContactUsSection from "../../components/sections/ContactUsSection";
 import AchievementsSection from "../../components/sections/AchievementsSection";
 import { useQuery } from "@tanstack/react-query";
 import { getAboutUsPage } from "../../services/pagesServices";
+import { getHome } from "../../services/homeServices";
 
 const Home = () => {
-  const { data: aboutUsPage = [], isLoading: AboutLoading } = useQuery({
+  const { data: homePage = [], isLoading: homeLoading } = useQuery({
+    queryKey: ["homePage"],
+    queryFn: getHome,
+  });
+
+  const { data: aboutUsPage = [], isLoading: aboutLoading } = useQuery({
     queryKey: ["aboutUsPage"],
     queryFn: getAboutUsPage,
   });
@@ -20,14 +26,14 @@ const Home = () => {
   return (
     <article>
       <Hero />
-      <AboutSection data={aboutUsPage?.about_section} loading={AboutLoading} />
-      <OurServices />
-      <OurProjects />
+      <AboutSection data={aboutUsPage?.about_section} loading={aboutLoading} />
+      <OurServices data={homePage?.webservices} loading={homeLoading} />
+      <OurProjects data={homePage?.projects} loading={homeLoading} />
       <AchievementsSection
         data={aboutUsPage?.statistics}
-        loading={AboutLoading}
+        loading={aboutLoading}
       />
-      <OurPartners />
+      <OurPartners data={homePage?.partners} loading={homeLoading} />
       <DownloadAppBanner />
       <FAQS />
       <Testimonials />

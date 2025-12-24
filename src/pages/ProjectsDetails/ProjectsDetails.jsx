@@ -32,7 +32,7 @@ const ProjectsDetails = () => {
   return (
     <article>
       <PageBanner
-        title="مشروع المؤيد"
+        // title="مشروع المؤيد"
         subTitle={projectsDetailsPage?.project_banner?.title}
         description={projectsDetailsPage?.project_banner?.description}
         image={projectsDetailsPage?.project_banner?.project_image}

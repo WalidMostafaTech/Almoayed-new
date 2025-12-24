@@ -2,21 +2,24 @@ import { Link } from "react-router-dom";
 import youtubeIcon from "../../../assets/icons/youtube-icon.png";
 import SectionTitle from "../../../components/common/SectionTitle";
 import { CgPhone } from "react-icons/cg";
+import { useTranslation } from "react-i18next";
 
 const ServiceAbout = ({ data }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="container sectionPadding grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
       <div>
         <SectionTitle
           wide
           description={data?.name}
-          title="عن خدمات مجموعة المؤيد"
+          title={t("serviceAbout.title")}
           subtitle={data?.description}
           html
         />
 
         <Link to="/contact" className="mainBtn w-fit mt-4">
-          اتصل بنا
+          {t("serviceAbout.contact")}
           <CgPhone />
         </Link>
       </div>
@@ -25,7 +28,7 @@ const ServiceAbout = ({ data }) => {
         {data?.video_link && (
           <Link
             to={data?.video_link}
-            target="_blanc"
+            target="_blank"
             className="absolute inset-0 z-20 flex items-center justify-center"
           >
             <img src={youtubeIcon} alt="youtube" className="w-12" />

@@ -1,5 +1,4 @@
 import SectionTitle from "../../../components/common/SectionTitle";
-import img from "../../../assets/images/project-img.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -9,50 +8,14 @@ import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import ServicesCard from "../../../components/cards/ServicesCard";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import SkeletonCards from "../../../components/Loading/SkeletonLoading/SkeletonCards";
 
-const list = [
-  {
-    id: 1,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-  {
-    id: 2,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-  {
-    id: 3,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-  {
-    id: 4,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-  {
-    id: 5,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-  {
-    id: 6,
-    image: img,
-    link: "/",
-    title: "مجموعة المؤيد للتطوير العقارى-المؤيد للمصاعد",
-  },
-];
-
-const OurServices = () => {
+const OurServices = ({ data, loading }) => {
   const { t } = useTranslation();
 
   const { lang } = useSelector((state) => state.language);
+
+  if (loading) return <SkeletonCards cardNum={4} size="lg" />;
 
   return (
     <section className="sectionPadding container">
@@ -89,7 +52,7 @@ const OurServices = () => {
         }}
         className="mt-8"
       >
-        {list.map((item) => (
+        {data?.map((item) => (
           <SwiperSlide key={item.id}>
             <ServicesCard item={item} />
           </SwiperSlide>

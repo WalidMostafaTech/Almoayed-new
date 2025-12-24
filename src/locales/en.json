@@ -12,6 +12,8 @@
   "noData": "No data to show",
   "phone": "Phone",
   "whatsapp": "WhatsApp",
+  "shareBlog": "Share Blog",
+  "dateBlog": "Publish Date",
 
   "footer": {
     "quickLinks": "Quick Links",
@@ -125,5 +127,43 @@
   "NotFound": {
     "title": "Page Not Found",
     "goHome": "Go Home"
+  },
+
+  "productAbout": {
+    "title": "Project Overview",
+    "generalProfile": "Download General Profile",
+    "residentialProfile": "Download Residential Profile"
+  },
+
+  "projectFeatures": {
+    "title": "Location Features",
+    "subtitle": "We offer you a project that combines quality, innovation, and sustainability"
+  },
+
+  "projectFacilities": {
+    "title": "Facilities & Equipment",
+    "subtitle": "Carefully designed details that embody a fully integrated modern lifestyle, combining comfort, luxury, and innovation.",
+    "facilities": "Facilities",
+    "systems": "Systems & Equipment"
+  },
+
+  "projectSteps": {
+    "title": "Project Execution Stages",
+    "subtitle": "A structured and well-planned execution process to ensure delivering the project with the highest quality and on schedule"
+  },
+
+  "serviceAbout": {
+    "title": "About Almoayed Group Services",
+    "contact": "Contact Us"
+  },
+
+  "serviceServices": {
+    "description": "Our Services",
+    "title": "Our Technologies Reflect Our Passion for Quality"
+  },
+
+  "serviceAnotherServices": {
+    "description": "Other Services",
+    "title": "Our Expertise Speaks of Our Passion"
   }
 }

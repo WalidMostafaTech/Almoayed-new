@@ -11,7 +11,7 @@ const ProductCard = ({ item }) => {
         className="w-full h-32 object-contain"
       />
 
-      <h2 className="text-lg font-bold text-myGold">{item.status}</h2>
+      <h2 className="text-lg font-bold text-myGold min-h-8">{item.status}</h2>
 
       <Link to={`/project-details/${item.id}`} className="mainBtn w-full">
         {t("more")}

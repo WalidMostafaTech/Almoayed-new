@@ -1,12 +1,15 @@
 import SectionTitle from "../../../components/common/SectionTitle";
+import { useTranslation } from "react-i18next";
 
 const ServiceServices = ({ data }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="container sectionPadding space-y-6">
       <SectionTitle
         wide
-        description="خدماتنا"
-        title="تقنياتنا تعكس شغفنا بالجودة"
+        description={t("serviceServices.description")}
+        title={t("serviceServices.title")}
       />
 
       <div className="h-[300px] lg:h-[500px] bg-myDark-2 overflow-hidden rounded-xl rounded-es-[70px] rounded-se-[70px]">

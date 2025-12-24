@@ -1,5 +1,4 @@
 import SectionTitle from "../../../components/common/SectionTitle";
-import img from "../../../assets/images/logo/logo.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -9,48 +8,13 @@ import SwiperNavigation from "../../../components/common/SwiperNavigation";
 import ProductCard from "../../../components/cards/ProductCard";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import SkeletonCards from "../../../components/Loading/SkeletonLoading/SkeletonCards";
 
-const list = [
-  {
-    id: 1,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-  {
-    id: 2,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-  {
-    id: 3,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-  {
-    id: 4,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-  {
-    id: 5,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-  {
-    id: 6,
-    icon: img,
-    link: "/",
-    status: "تم الانتهاء",
-  },
-];
-const OurProjects = () => {
+const OurProjects = ({ data, loading }) => {
   const { t } = useTranslation();
   const { lang } = useSelector((state) => state.language);
+
+  if (loading) return <SkeletonCards cardNum={4} size="lg" />;
 
   return (
     <section className="sectionPadding container">
@@ -86,7 +50,7 @@ const OurProjects = () => {
           },
         }}
       >
-        {list.map((item) => (
+        {data?.map((item) => (
           <SwiperSlide key={item.id} className="my-8">
             <ProductCard item={item} />
           </SwiperSlide>
