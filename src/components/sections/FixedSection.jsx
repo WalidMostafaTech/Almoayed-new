@@ -28,7 +28,7 @@ const FixedSection = () => {
   ];
 
   return (
-    <section className="fixed end-0 top-1/2 -translate-y-1/2 z-40">
+    <section className="fixed end-0 bottom-1/6 z-40">
       <div className="flex flex-col items-end gap-2">
         {list.map((item) => (
           <a

@@ -63,7 +63,7 @@ const Hero = () => {
       </Swiper>
 
       {/* Controls */}
-      <SwiperNavigation name="hero" />
+      {sliders?.length > 1 && <SwiperNavigation name="hero" />}
     </section>
   );
 };

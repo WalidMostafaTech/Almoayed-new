@@ -9,6 +9,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ar";
 import { useDispatch } from "react-redux";
 import { fetchSetting } from "./store/setting/setting";
+import ScrollToTopBtn from "./components/common/ScrollToTopBtn";
 
 dayjs.extend(relativeTime);
 dayjs.locale("ar");
@@ -36,6 +37,7 @@ function App() {
       <Footer />
 
       <FixedSection />
+      <ScrollToTopBtn />
     </main>
   );
 }

@@ -119,7 +119,11 @@ const BlogDetails = () => {
                 </div>
               </div>
 
-              <p className={`text-center font-semibold flex items-center justify-center gap-1 ${copied ? "h-6" : "h-0" } duration-300 overflow-hidden`}>
+              <p
+                className={`text-center font-semibold flex items-center justify-center gap-1 ${
+                  copied ? "h-6" : "h-0"
+                } duration-300 overflow-hidden`}
+              >
                 {t("linkCopied")} <RxCheck className="text-2xl" />
               </p>
             </div>
@@ -135,7 +139,7 @@ const BlogDetails = () => {
               {dayjs(blog?.created_at).format("DD-MM-YYYY")}
             </p>
 
-            <div dangerouslySetInnerHTML={{ __html: blog?.description }} />
+            <div dangerouslySetInnerHTML={{ __html: blog?.content }} />
           </div>
         </section>
       </article>
