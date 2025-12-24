@@ -5,6 +5,7 @@ import { getContactPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonContactUs from "../../components/Loading/SkeletonLoading/SkeletonContactUs";
 import { useTranslation } from "react-i18next";
+import SeoManager from "../../utils/SeoManager";
 
 const ContactUS = () => {
   const { t } = useTranslation();
