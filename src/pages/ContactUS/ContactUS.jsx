@@ -23,16 +23,24 @@ const ContactUS = () => {
     );
 
   return (
-    <article>
-      <PageBanner
-        title={t("contact")}
-        subTitle={contactUsPage?.title}
-        description={contactUsPage?.description}
-        image={contactUsPage?.contact_image}
+    <>
+      <SeoManager
+        title={contactUsPage?.seo?.meta_title}
+        description={contactUsPage?.seo?.meta_description}
+        keywords={contactUsPage?.seo?.keywords}
       />
 
-      <ContactUsSection />
-    </article>
+      <article>
+        <PageBanner
+          title={t("contact")}
+          subTitle={contactUsPage?.title}
+          description={contactUsPage?.description}
+          image={contactUsPage?.contact_image}
+        />
+
+        <ContactUsSection />
+      </article>
+    </>
   );
 };
 

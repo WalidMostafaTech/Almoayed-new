@@ -7,6 +7,7 @@ import { getAboutUsPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonPostSection from "../../components/Loading/SkeletonLoading/SkeletonPostSection";
 import { useTranslation } from "react-i18next";
+import SeoManager from "../../utils/SeoManager";
 
 const AboutUS = () => {
   const { t } = useTranslation();
@@ -25,20 +26,28 @@ const AboutUS = () => {
     );
 
   return (
-    <article>
-      <PageBanner
-        title={t("about")}
-        subTitle={aboutUsPage?.main_section?.title}
-        description={aboutUsPage?.main_section?.description}
-        image={aboutUsPage?.main_section?.home_image}
+    <>
+      <SeoManager
+        title={aboutUsPage?.seo?.meta_title}
+        description={aboutUsPage?.seo?.meta_description}
+        keywords={aboutUsPage?.seo?.keywords}
       />
 
-      <AchievementsSection center data={aboutUsPage?.statistics} />
+      <article>
+        <PageBanner
+          title={t("about")}
+          subTitle={aboutUsPage?.main_section?.title}
+          description={aboutUsPage?.main_section?.description}
+          image={aboutUsPage?.main_section?.home_image}
+        />
 
-      <AboutSection data={aboutUsPage?.about_section} />
+        <AchievementsSection center data={aboutUsPage?.statistics} />
 
-      {<AboutMissionValuesVision data={aboutUsPage?.mission_values_vision} />}
-    </article>
+        <AboutSection data={aboutUsPage?.about_section} />
+
+        {<AboutMissionValuesVision data={aboutUsPage?.mission_values_vision} />}
+      </article>
+    </>
   );
 };
 

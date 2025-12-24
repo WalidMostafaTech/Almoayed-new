@@ -11,6 +11,7 @@ import AchievementsSection from "../../components/sections/AchievementsSection";
 import { useQuery } from "@tanstack/react-query";
 import { getAboutUsPage } from "../../services/pagesServices";
 import { getHome } from "../../services/homeServices";
+import SeoManager from "../../utils/SeoManager";
 
 const Home = () => {
   const { data: homePage = [], isLoading: homeLoading } = useQuery({
@@ -24,21 +25,32 @@ const Home = () => {
   });
 
   return (
-    <article>
-      <Hero />
-      <AboutSection data={aboutUsPage?.about_section} loading={aboutLoading} />
-      <OurServices data={homePage?.webservices} loading={homeLoading} />
-      <OurProjects data={homePage?.projects} loading={homeLoading} />
-      <AchievementsSection
-        data={aboutUsPage?.statistics}
-        loading={aboutLoading}
+    <>
+      <SeoManager
+        title={homePage?.seo?.meta_title}
+        description={homePage?.seo?.meta_description}
+        keywords={homePage?.seo?.keywords}
       />
-      <OurPartners data={homePage?.partners} loading={homeLoading} />
-      <DownloadAppBanner />
-      <FAQS />
-      <Testimonials />
-      <ContactUsSection />
-    </article>
+
+      <article>
+        <Hero />
+        <AboutSection
+          data={aboutUsPage?.about_section}
+          loading={aboutLoading}
+        />
+        <OurServices data={homePage?.webservices} loading={homeLoading} />
+        <OurProjects data={homePage?.projects} loading={homeLoading} />
+        <AchievementsSection
+          data={aboutUsPage?.statistics}
+          loading={aboutLoading}
+        />
+        <OurPartners data={homePage?.partners} loading={homeLoading} />
+        <DownloadAppBanner />
+        <FAQS />
+        <Testimonials />
+        <ContactUsSection />
+      </article>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { getWebServicesPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
 import { useTranslation } from "react-i18next";
+import SeoManager from "../../utils/SeoManager";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -23,20 +24,28 @@ const Services = () => {
     );
 
   return (
-    <article>
-      <PageBanner
-        title={t("services")}
-        subTitle={webServicesPage?.extra?.webservice_banner?.title}
-        description={webServicesPage?.extra?.webservice_banner?.description}
-        image={webServicesPage?.extra?.webservice_banner?.webservice_image}
+    <>
+      <SeoManager
+        title={webServicesPage?.extra?.seo?.meta_title}
+        description={webServicesPage?.extra?.seo?.meta_description}
+        keywords={webServicesPage?.extra?.seo?.keywords}
       />
 
-      <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {webServicesPage?.items.map((item) => (
-          <ServicesCard key={item.id} item={item} />
-        ))}
-      </section>
-    </article>
+      <article>
+        <PageBanner
+          title={t("services")}
+          subTitle={webServicesPage?.extra?.webservice_banner?.title}
+          description={webServicesPage?.extra?.webservice_banner?.description}
+          image={webServicesPage?.extra?.webservice_banner?.webservice_image}
+        />
+
+        <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {webServicesPage?.items.map((item) => (
+            <ServicesCard key={item.id} item={item} />
+          ))}
+        </section>
+      </article>
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ import { getProjectDetailsPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonDetailsSection from "../../components/Loading/SkeletonLoading/SkeletonDetailsSection";
 import SkeletonPostSection from "../../components/Loading/SkeletonLoading/SkeletonPostSection";
+import SeoManager from "../../utils/SeoManager";
 
 const ProjectsDetails = () => {
   const { id } = useParams();
@@ -30,21 +31,29 @@ const ProjectsDetails = () => {
     );
 
   return (
-    <article>
-      <PageBanner
-        // title="مشروع المؤيد"
-        subTitle={projectsDetailsPage?.project_banner?.title}
-        description={projectsDetailsPage?.project_banner?.description}
-        image={projectsDetailsPage?.project_banner?.project_image}
+    <>
+      <SeoManager
+        title={projectsDetailsPage?.project?.meta_title}
+        description={projectsDetailsPage?.project?.meta_description}
+        keywords={projectsDetailsPage?.project?.keywords}
       />
 
-      <ProductAbout data={projectsDetailsPage?.project} />
-      <ProjectComponents data={projectsDetailsPage?.project} />
-      <ProjectFeatures data={projectsDetailsPage?.project} />
-      <ProjectFacilitiesAndEquipment data={projectsDetailsPage?.project} />
-      <ProjectSteps data={projectsDetailsPage?.project?.execution_phases} />
-      <ContactUsSection />
-    </article>
+      <article>
+        <PageBanner
+          // title="مشروع المؤيد"
+          subTitle={projectsDetailsPage?.project_banner?.title}
+          description={projectsDetailsPage?.project_banner?.description}
+          image={projectsDetailsPage?.project_banner?.project_image}
+        />
+
+        <ProductAbout data={projectsDetailsPage?.project} />
+        <ProjectComponents data={projectsDetailsPage?.project} />
+        <ProjectFeatures data={projectsDetailsPage?.project} />
+        <ProjectFacilitiesAndEquipment data={projectsDetailsPage?.project} />
+        <ProjectSteps data={projectsDetailsPage?.project?.execution_phases} />
+        <ContactUsSection />
+      </article>
+    </>
   );
 };
 

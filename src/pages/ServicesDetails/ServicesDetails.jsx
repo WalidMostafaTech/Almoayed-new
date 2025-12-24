@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonDetailsSection from "../../components/Loading/SkeletonLoading/SkeletonDetailsSection";
 import SkeletonPostSection from "../../components/Loading/SkeletonLoading/SkeletonPostSection";
+import SeoManager from "../../utils/SeoManager";
 
 const ServicesDetails = () => {
   const { id } = useParams();
@@ -27,18 +28,28 @@ const ServicesDetails = () => {
     );
 
   return (
-    <article>
-      <PageBanner
-        // title="المؤيد للمصاعد"
-        subTitle={webServicesDetailsPage?.webservice_banner?.title}
-        description={webServicesDetailsPage?.webservice_banner?.description}
-        image={webServicesDetailsPage?.webservice_banner?.webservice_image}
+    <>
+      <SeoManager
+        title={webServicesDetailsPage?.service?.meta_title}
+        description={webServicesDetailsPage?.service?.meta_description}
+        keywords={webServicesDetailsPage?.service?.keywords}
       />
 
-      <ServiceAbout data={webServicesDetailsPage?.service} />
-      <ServiceServices data={webServicesDetailsPage?.service} />
-      <ServiceAnotherServices data={webServicesDetailsPage?.related_services} />
-    </article>
+      <article>
+        <PageBanner
+          // title="المؤيد للمصاعد"
+          subTitle={webServicesDetailsPage?.webservice_banner?.title}
+          description={webServicesDetailsPage?.webservice_banner?.description}
+          image={webServicesDetailsPage?.webservice_banner?.webservice_image}
+        />
+
+        <ServiceAbout data={webServicesDetailsPage?.service} />
+        <ServiceServices data={webServicesDetailsPage?.service} />
+        <ServiceAnotherServices
+          data={webServicesDetailsPage?.related_services}
+        />
+      </article>
+    </>
   );
 };
 
