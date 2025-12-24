@@ -21,7 +21,7 @@ const ProjectsDetails = () => {
     queryFn: () => getProjectDetailsPage(id),
   });
 
-  if (isLoading)
+  if (isLoading || !projectsDetailsPage)
     return (
       <article>
         <SkeletonPageBanner />

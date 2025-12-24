@@ -1,9 +1,15 @@
 import ServicesCard from "../../../components/cards/ServicesCard";
 import SectionTitle from "../../../components/common/SectionTitle";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import { useSelector } from "react-redux";
+import SwiperNavigation from "../../../components/common/SwiperNavigation";
 
 const ServiceAnotherServices = ({ data }) => {
   const { t } = useTranslation();
+  const { lang } = useSelector((state) => state.language);
 
   return (
     <section className="container sectionPadding space-y-4">
@@ -13,11 +19,38 @@ const ServiceAnotherServices = ({ data }) => {
         title={t("serviceAnotherServices.title")}
       />
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <Swiper
+        dir={lang === "ar" ? "rtl" : "ltr"}
+        modules={[Navigation]}
+        spaceBetween={16}
+        navigation={{
+          prevEl: ".ourServicesInPage-prev",
+          nextEl: ".ourServicesInPage-next",
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          640: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 3.5,
+          },
+          1280: {
+            slidesPerView: 4.5,
+          },
+        }}
+        className="mt-8"
+      >
         {data?.map((item) => (
-          <ServicesCard key={item.id} item={item} />
+          <SwiperSlide key={item.id}>
+            <ServicesCard item={item} />
+          </SwiperSlide>
         ))}
-      </section>
+      </Swiper>
+
+      <SwiperNavigation name="ourServicesInPage" />
     </section>
   );
 };

@@ -9,6 +9,8 @@ const AboutSection = ({ data, loading }) => {
 
   if (loading) return <SkeletonDetailsSection />;
 
+  if (!data) return null;
+
   return (
     <section className="sectionPadding container grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-16">
       <div className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
@@ -19,7 +21,7 @@ const AboutSection = ({ data, loading }) => {
             <Link
               to={data?.video_link}
               target="_blanc"
-              className="absolute inset-0 z-20 flex items-center justify-center"
+              className="absolute inset-0 z-20 flex items-center justify-center rounded-4xl"
             >
               <img src={youtubeIcon} alt="youtube" className="w-12" />
             </Link>

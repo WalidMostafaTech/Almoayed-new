@@ -6,6 +6,7 @@ import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/Skeleto
 import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
 import { useTranslation } from "react-i18next";
 import SeoManager from "../../utils/SeoManager";
+import EmptyData from "../../components/sections/EmptyData";
 
 const Blog = () => {
   const { t } = useTranslation();
@@ -39,11 +40,15 @@ const Blog = () => {
           image={blogs?.extra?.blog_banner?.blog_image}
         />
 
-        <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {blogs?.items.map((item) => (
-            <BlogCard key={item.id} item={item} />
-          ))}
-        </section>
+        {blogs?.items.length > 0 ? (
+          <section className="sectionPadding container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {blogs?.items.map((item) => (
+              <BlogCard key={item.id} item={item} />
+            ))}
+          </section>
+        ) : (
+          <EmptyData />
+        )}
       </article>
     </>
   );

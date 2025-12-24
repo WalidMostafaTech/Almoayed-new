@@ -18,6 +18,8 @@ const Hero = () => {
 
   if (isLoading) return <SkeletonHero />;
 
+  if (!sliders?.length) return null;
+
   return (
     <section className="container">
       <Swiper

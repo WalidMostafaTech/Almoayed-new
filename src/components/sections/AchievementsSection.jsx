@@ -1,44 +1,66 @@
 import SectionTitle from "../common/SectionTitle";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import SkeletonPostSection from "../Loading/SkeletonLoading/SkeletonPostSection";
 import { useTranslation } from "react-i18next";
 
 const AchievementsSection = ({ data, center = false, loading }) => {
   const { t } = useTranslation();
-
-  const items = [
-    {
-      id: 1,
-      value: data?.projects_count,
-      label: t("AchievementsSection.projects"),
-    },
-    {
-      id: 2,
-      value: data?.square_meters,
-      label: t("AchievementsSection.squareMeters"),
-    },
-    {
-      id: 3,
-      value: data?.years_experience,
-      label: t("AchievementsSection.yearsExperience"),
-    },
-    {
-      id: 4,
-      value: data?.residential_units,
-      label: t("AchievementsSection.residentialUnits"),
-    },
-  ];
-
   const sectionRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
-  const [counts, setCounts] = useState(items.map(() => 0));
+  const [counts, setCounts] = useState([0, 0, 0, 0]);
 
+  // دالة لتحويل القيمة لرقم
+  const parseValue = (value) => {
+    if (typeof value === "number") return value;
+    if (typeof value === "string") {
+      const parsed = parseInt(value.replace(/[^\d]/g, ""), 10);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+    return 0;
+  };
+
+  // إنشاء items باستخدام useMemo
+  const items = useMemo(() => {
+    if (!data) return [];
+
+    return [
+      {
+        id: 1,
+        value: parseValue(data?.projects_count),
+        label: t("AchievementsSection.projects"),
+      },
+      {
+        id: 2,
+        value: parseValue(data?.square_meters),
+        label: t("AchievementsSection.squareMeters"),
+      },
+      {
+        id: 3,
+        value: parseValue(data?.years_experience),
+        label: t("AchievementsSection.yearsExperience"),
+      },
+      {
+        id: 4,
+        value: parseValue(data?.residential_units),
+        label: t("AchievementsSection.residentialUnits"),
+      },
+    ];
+  }, [data, t]);
+
+  // Intersection Observer Effect - بيشتغل في كل مرة
   useEffect(() => {
+    // إعادة تعيين الحالة
+    setStartCount(false);
+    setCounts([0, 0, 0, 0]);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setStartCount(true);
-          observer.disconnect();
+        } else {
+          // إعادة تعيين لما يخرج من الشاشة
+          setStartCount(false);
+          setCounts([0, 0, 0, 0]);
         }
       },
       { threshold: 0.4 }
@@ -49,22 +71,22 @@ const AchievementsSection = ({ data, center = false, loading }) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [data]); // إضافة data كـ dependency
 
   // عد الأرقام
   useEffect(() => {
-    if (!startCount) return;
+    if (!startCount || items.length === 0) return;
 
-    items.forEach((item, index) => {
+    const intervals = items.map((item, index) => {
       let current = 0;
       const increment = Math.ceil(item.value / 50);
 
-      const interval = setInterval(() => {
+      return setInterval(() => {
         current += increment;
 
         if (current >= item.value) {
           current = item.value;
-          clearInterval(interval);
+          clearInterval(intervals[index]);
         }
 
         setCounts((prev) => {
@@ -74,9 +96,13 @@ const AchievementsSection = ({ data, center = false, loading }) => {
         });
       }, 30);
     });
-  }, [startCount]);
 
+    return () => intervals.forEach((interval) => clearInterval(interval));
+  }, [startCount, items]);
+
+  // Early returns بعد كل الـ Hooks
   if (loading) return <SkeletonPostSection center={center} />;
+  if (!data) return null;
 
   return (
     <section className="sectionPadding container">
@@ -102,7 +128,7 @@ const AchievementsSection = ({ data, center = false, loading }) => {
               `}
             >
               <span className="text-5xl font-bold text-myGold">
-                {counts[index]}
+                +{counts[index]}
               </span>
               <span>{item.label}</span>
             </div>

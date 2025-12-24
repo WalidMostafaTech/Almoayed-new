@@ -16,6 +16,8 @@ const OurPartners = ({ data, loading }) => {
 
   if (loading) return <SkeletonCards cardNum={6} />;
 
+  if (!data?.length) return null;
+
   return (
     <section className="sectionPadding container">
       <SectionTitle

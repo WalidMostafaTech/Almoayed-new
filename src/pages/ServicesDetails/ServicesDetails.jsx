@@ -18,7 +18,7 @@ const ServicesDetails = () => {
     queryFn: () => getWebServicesDetailsPage(id),
   });
 
-  if (isLoading)
+  if (isLoading || !webServicesDetailsPage)
     return (
       <article>
         <SkeletonPageBanner />

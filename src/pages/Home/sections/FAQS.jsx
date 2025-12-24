@@ -27,6 +27,8 @@ const FAQS = () => {
       </article>
     );
 
+  if (!faqs?.length) return null;
+
   return (
     <section className="sectionPadding container">
       <SectionTitle

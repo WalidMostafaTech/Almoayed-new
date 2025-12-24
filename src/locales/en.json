@@ -165,5 +165,12 @@
   "serviceAnotherServices": {
     "description": "Other Services",
     "title": "Our Expertise Speaks of Our Passion"
+  },
+
+  "ErrorPage": {
+    "title": "An unexpected error occurred",
+    "description": "There was a problem loading the page. Please try again later.",
+    "reload": "Reload page",
+    "goHome": "Go to Home"
   }
 }

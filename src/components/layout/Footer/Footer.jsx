@@ -12,6 +12,8 @@ import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { setting } = useSelector((state) => state.setting);
+  const appSection = setting?.app_section;
+
   const { t } = useTranslation();
 
   const quickLinks = [
@@ -47,41 +49,45 @@ const Footer = () => {
 
             {/* Store Buttons */}
             <div className="flex flex-wrap gap-2 lg:gap-4">
-              <a
-                href="#"
-                dir="ltr"
-                className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl"
-              >
-                <img
-                  src={appStore}
-                  alt="Download on App Store"
-                  className="w-6 invert"
-                />
-                <div className="leading-tight">
-                  <span className="block text-[8px] uppercase">
-                    {t("footer.downloadOn")}
-                  </span>
-                  <span className="text-sm font-bold">
-                    {t("footer.appStore")}
-                  </span>
-                </div>
-              </a>
+              {appSection?.ios_app_link && (
+                <Link
+                  to={appSection?.ios_app_link}
+                  target="_blank"
+                  className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl hover:scale-105 duration-300"
+                >
+                  <img
+                    src={appStore}
+                    alt="Download on App Store"
+                    className="w-6 invert"
+                  />
+                  <div className="leading-tight text-start">
+                    <span className="block text-[8px] uppercase">
+                      {t("footer.downloadOn")}
+                    </span>
+                    <span className="text-sm font-bold">
+                      {t("footer.appStore")}
+                    </span>
+                  </div>
+                </Link>
+              )}
 
-              <a
-                href="#"
-                dir="ltr"
-                className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl"
-              >
-                <img src={googlePlay} alt="Google Play" className="w-6" />
-                <div className="leading-tight text-start">
-                  <span className="block text-[8px] uppercase">
-                    {t("footer.getItOn")}
-                  </span>
-                  <span className="text-sm font-bold">
-                    {t("footer.googlePlay")}
-                  </span>
-                </div>
-              </a>
+              {appSection?.android_app_link && (
+                <Link
+                  to={appSection?.android_app_link}
+                  target="_blank"
+                  className="flex items-center justify-center gap-3 bg-white text-black px-4 py-2 min-w-[180px] rounded-xl hover:scale-105 duration-300"
+                >
+                  <img src={googlePlay} alt="Google Play" className="w-6" />
+                  <div className="leading-tight text-start">
+                    <span className="block text-[8px] uppercase">
+                      {t("footer.getItOn")}
+                    </span>
+                    <span className="text-sm font-bold">
+                      {t("footer.googlePlay")}
+                    </span>
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
 

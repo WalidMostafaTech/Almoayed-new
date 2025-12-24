@@ -17,6 +17,8 @@ const OurServices = ({ data, loading }) => {
 
   if (loading) return <SkeletonCards cardNum={4} size="lg" />;
 
+  if (!data?.length) return null;
+
   return (
     <section className="sectionPadding container">
       <SectionTitle

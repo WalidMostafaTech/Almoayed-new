@@ -45,7 +45,7 @@ const AboutUS = () => {
 
         <AboutSection data={aboutUsPage?.about_section} />
 
-        {<AboutMissionValuesVision data={aboutUsPage?.mission_values_vision} />}
+        <AboutMissionValuesVision data={aboutUsPage?.mission_values_vision} />
       </article>
     </>
   );

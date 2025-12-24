@@ -4,9 +4,12 @@ import appleIcon from "../../../assets/icons/apple-icon.png.png";
 import googleIcon from "../../../assets/icons/google-play-icon.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const DownloadAppBanner = () => {
   const { t } = useTranslation();
+  const { setting } = useSelector((state) => state.setting);
+  const appSection = setting?.app_section;
 
   return (
     <section className="sectionPadding container">
@@ -32,55 +35,59 @@ const DownloadAppBanner = () => {
 
           {/* Title */}
           <h2 className="text-2xl font-bold leading-snug">
-            {t("DownloadAppBanner.title")}
+            {appSection?.appTitle || t("DownloadAppBanner.title")}
           </h2>
 
           {/* Description */}
           <p className="text-white/80 leading-relaxed text-lg">
-            {t("DownloadAppBanner.description")}
+            {appSection?.appDes || t("DownloadAppBanner.description")}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
-            <Link
-              to={"#"}
-              target="_blank"
-              className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full"
-            >
-              <img
-                src={appleIcon}
-                alt={t("DownloadAppBanner.buttons.appStore.alt")}
-                className="w-6"
-              />
-              <div className="leading-tight text-start">
-                <span className="block text-[8px] uppercase opacity-80">
-                  {t("DownloadAppBanner.buttons.appStore.topText")}
-                </span>
-                <span className="text-sm font-semibold">
-                  {t("DownloadAppBanner.buttons.appStore.bottomText")}
-                </span>
-              </div>
-            </Link>
+            {appSection?.ios_app_link && (
+              <Link
+                to={appSection?.ios_app_link}
+                target="_blank"
+                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full hover:scale-105 duration-300"
+              >
+                <img
+                  src={appleIcon}
+                  alt={t("DownloadAppBanner.buttons.appStore.alt")}
+                  className="w-6"
+                />
+                <div className="leading-tight text-start">
+                  <span className="block text-[8px] uppercase opacity-80">
+                    {t("DownloadAppBanner.buttons.appStore.topText")}
+                  </span>
+                  <span className="text-sm font-semibold">
+                    {t("DownloadAppBanner.buttons.appStore.bottomText")}
+                  </span>
+                </div>
+              </Link>
+            )}
 
-            <Link
-              to={"#"}
-              target="_blank"
-              className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full"
-            >
-              <img
-                src={googleIcon}
-                alt={t("DownloadAppBanner.buttons.googlePlay.alt")}
-                className="w-6"
-              />
-              <div className="leading-tight text-start">
-                <span className="block text-[8px] uppercase opacity-80">
-                  {t("DownloadAppBanner.buttons.googlePlay.topText")}
-                </span>
-                <span className="text-sm font-semibold">
-                  {t("DownloadAppBanner.buttons.googlePlay.bottomText")}
-                </span>
-              </div>
-            </Link>
+            {appSection?.android_app_link && (
+              <Link
+                to={appSection?.android_app_link}
+                target="_blank"
+                className="flex items-center justify-center gap-3 bg-black text-white px-4 py-2 min-w-[200px] rounded-full hover:scale-105 duration-300"
+              >
+                <img
+                  src={googleIcon}
+                  alt={t("DownloadAppBanner.buttons.googlePlay.alt")}
+                  className="w-6"
+                />
+                <div className="leading-tight text-start">
+                  <span className="block text-[8px] uppercase opacity-80">
+                    {t("DownloadAppBanner.buttons.googlePlay.topText")}
+                  </span>
+                  <span className="text-sm font-semibold">
+                    {t("DownloadAppBanner.buttons.googlePlay.bottomText")}
+                  </span>
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>

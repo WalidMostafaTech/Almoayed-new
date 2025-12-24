@@ -6,6 +6,7 @@ import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/Skeleto
 import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
 import { useTranslation } from "react-i18next";
 import SeoManager from "../../utils/SeoManager";
+import EmptyData from "../../components/sections/EmptyData";
 
 const Partners = () => {
   const { t } = useTranslation();
@@ -39,11 +40,15 @@ const Partners = () => {
           image={partnersPage?.partner_banner?.partner_image}
         />
 
-        <section className="sectionPadding container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
-          {partnersPage?.partners?.map((item) => (
-            <PartnersCard key={item.id} item={item} />
-          ))}
-        </section>
+        {partnersPage?.partners?.length > 0 ? (
+          <section className="sectionPadding container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 place-items-center">
+            {partnersPage?.partners?.map((item) => (
+              <PartnersCard key={item.id} item={item} />
+            ))}
+          </section>
+        ) : (
+          <EmptyData />
+        )}
       </article>
     </>
   );

@@ -21,11 +21,14 @@ const BlogDetails = React.lazy(() =>
 );
 
 const NotFound = React.lazy(() => import("../pages/NotFound/NotFound"));
+const ErrorPage = React.lazy(() => import("../pages/ErrorPage/ErrorPage"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
+
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <AboutUS /> },

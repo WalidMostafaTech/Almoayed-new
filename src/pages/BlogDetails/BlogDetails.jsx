@@ -23,7 +23,7 @@ const BlogDetails = () => {
   });
   const blog = blogDetails?.blog;
 
-  if (isLoading)
+  if (isLoading || !blogDetails)
     return (
       <article>
         <SkeletonPageBanner />

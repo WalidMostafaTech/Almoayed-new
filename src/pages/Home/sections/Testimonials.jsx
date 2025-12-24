@@ -23,6 +23,8 @@ const Testimonials = () => {
 
   if (isLoading) return <SkeletonCards cardNum={4} size="lg" />;
 
+  if (!testimonials?.length) return null;
+
   return (
     <section className="sectionPadding container">
       <SectionTitle

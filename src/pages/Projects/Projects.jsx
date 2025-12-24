@@ -6,6 +6,7 @@ import { getProjectPage } from "../../services/pagesServices";
 import SkeletonPageBanner from "../../components/Loading/SkeletonLoading/SkeletonPageBanner";
 import SkeletonCards from "../../components/Loading/SkeletonLoading/SkeletonCards";
 import SeoManager from "../../utils/SeoManager";
+import EmptyData from "../../components/sections/EmptyData";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ const Projects = () => {
     return (
       <article>
         <SkeletonPageBanner />
-        <SkeletonCards cardNum={4} />
+        <SkeletonCards cardNum={5} size="md" />
       </article>
     );
   return (
@@ -38,11 +39,15 @@ const Projects = () => {
           image={projectsPage?.extra?.project_banner?.project_image}
         />
 
-        <section className="sectionPadding container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-8">
-          {projectsPage?.items?.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </section>
+        {projectsPage?.items?.length > 0 ? (
+          <section className="sectionPadding container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-8">
+            {projectsPage?.items?.map((item) => (
+              <ProductCard key={item.id} item={item} />
+            ))}
+          </section>
+        ) : (
+          <EmptyData />
+        )}
       </article>
     </>
   );

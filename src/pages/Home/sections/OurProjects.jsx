@@ -14,7 +14,9 @@ const OurProjects = ({ data, loading }) => {
   const { t } = useTranslation();
   const { lang } = useSelector((state) => state.language);
 
-  if (loading) return <SkeletonCards cardNum={4} size="lg" />;
+  if (loading) return <SkeletonCards cardNum={5} size="md" />;
+
+  if (!data?.length) return null;
 
   return (
     <section className="sectionPadding container">

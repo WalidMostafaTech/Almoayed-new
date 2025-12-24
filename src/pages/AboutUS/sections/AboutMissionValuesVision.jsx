@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 const AboutMissionValuesVision = ({ data }) => {
   const { t } = useTranslation();
 
+  if (!data) return null;
+
   const list = [
     {
       id: 1,
