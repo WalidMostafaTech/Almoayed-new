@@ -8,13 +8,13 @@ const MobileNav = ({ links, isOpen, onClose, t }) => {
       {/* Overlay */}
       <div
         onClick={onClose}
-        className={`fixed inset-0 bg-black/50 z-50 transition-opacity
+        className={`fixed inset-0 bg-black/50 z-[999] transition-opacity
           ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
       />
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 h-full w-64 bg-myDark z-50
+        className={`fixed top-0 h-full w-64 bg-myDark z-[9999]
           transform transition-all duration-300
           ${isOpen ? "end-0" : "-end-full"}`}
       >

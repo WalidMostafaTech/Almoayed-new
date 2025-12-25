@@ -29,7 +29,7 @@ const ServiceAbout = ({ data }) => {
           <Link
             to={data?.video_link}
             target="_blank"
-            className="absolute inset-0 z-20 flex items-center justify-center rounded-4xl"
+            className="absolute inset-0 z-20 flex items-center justify-center rounded-4xl bg-black/50"
           >
             <img src={youtubeIcon} alt="youtube" className="w-12" />
           </Link>
