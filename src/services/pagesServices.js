@@ -44,3 +44,8 @@ export const getProjectDetailsPage = async (id) => {
   const { data } = await api.get(`/projects/${id}`);
   return data?.data || [];
 };
+
+export const getPrivacyPolicyPage = async () => {
+  const { data } = await api.get(`/privacy`);
+  return data?.data || {};
+};

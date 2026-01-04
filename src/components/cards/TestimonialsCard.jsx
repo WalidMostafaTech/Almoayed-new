@@ -14,7 +14,7 @@ const TestimonialsCard = ({ item }) => {
 
       <div className="flex items-center gap-2 py-2 px-4 relative">
         <div
-          className="w-8 h-8 bg-white absolute -top-4 start-0"
+          className="w-8 h-8 bg-white absolute -top-4 start-0 ltr:rotate-y-180"
           style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
         />
 

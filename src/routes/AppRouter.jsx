@@ -5,6 +5,7 @@ import LoadingPage from "../components/Loading/LoadingPage";
 
 const Home = React.lazy(() => import("../pages/Home/Home"));
 const AboutUS = React.lazy(() => import("../pages/AboutUS/AboutUS"));
+const PrivacyPolicy = React.lazy(() => import("../pages/PrivacyPolicy/PrivacyPolicy"));
 const ContactUs = React.lazy(() => import("../pages/ContactUS/ContactUS"));
 const Services = React.lazy(() => import("../pages/Services/Services"));
 const ServicesDetails = React.lazy(() =>
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <AboutUS /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "contact", element: <ContactUs /> },
       { path: "services", element: <Services /> },
       { path: "service-details/:id", element: <ServicesDetails /> },

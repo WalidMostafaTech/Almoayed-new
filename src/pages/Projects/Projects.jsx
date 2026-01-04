@@ -23,6 +23,7 @@ const Projects = () => {
         <SkeletonCards cardNum={5} size="md" />
       </article>
     );
+
   return (
     <>
       <SeoManager
