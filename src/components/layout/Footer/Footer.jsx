@@ -168,17 +168,26 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center border-t py-4 text-sm flex flex-col md:flex-row items-center justify-center gap-2">
+        <div className="text-center border-t py-4 text-sm flex flex-col lg:flex-row items-center justify-between gap-2">
           <p>{t("footer.copyright")}</p>
 
-          <span className="hidden md:inline">|</span>
+          <div className="flex items-center gap-2">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-myGold duration-300 underline"
+            >
+              {t("footer.privacy")}
+            </Link>
 
-          <Link
-            to="/privacy-policy"
-            className="hover:text-myGold duration-300 underline"
-          >
-            {t("footer.privacy")}
-          </Link>
+            <span className="inline">|</span>
+
+            <Link
+              to="/terms"
+              className="hover:text-myGold duration-300 underline"
+            >
+              {t("footer.terms")}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

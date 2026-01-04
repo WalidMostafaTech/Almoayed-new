@@ -5,7 +5,6 @@ import LoadingPage from "../components/Loading/LoadingPage";
 
 const Home = React.lazy(() => import("../pages/Home/Home"));
 const AboutUS = React.lazy(() => import("../pages/AboutUS/AboutUS"));
-const PrivacyPolicy = React.lazy(() => import("../pages/PrivacyPolicy/PrivacyPolicy"));
 const ContactUs = React.lazy(() => import("../pages/ContactUS/ContactUS"));
 const Services = React.lazy(() => import("../pages/Services/Services"));
 const ServicesDetails = React.lazy(() =>
@@ -20,6 +19,10 @@ const Blog = React.lazy(() => import("../pages/Blog/Blog"));
 const BlogDetails = React.lazy(() =>
   import("../pages/BlogDetails/BlogDetails")
 );
+const PrivacyPolicy = React.lazy(() =>
+  import("../pages/PrivacyPolicy/PrivacyPolicy")
+);
+const Terms = React.lazy(() => import("../pages/Terms/Terms"));
 
 const NotFound = React.lazy(() => import("../pages/NotFound/NotFound"));
 const ErrorPage = React.lazy(() => import("../pages/ErrorPage/ErrorPage"));
@@ -33,7 +36,6 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <AboutUS /> },
-      { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "contact", element: <ContactUs /> },
       { path: "services", element: <Services /> },
       { path: "service-details/:id", element: <ServicesDetails /> },
@@ -42,6 +44,8 @@ const router = createBrowserRouter([
       { path: "project-details/:id", element: <ProjectsDetails /> },
       { path: "blog", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "terms", element: <Terms /> },
 
       {
         path: "*",
