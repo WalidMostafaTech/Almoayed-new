@@ -17,7 +17,7 @@ const ProjectComponents = ({ data }) => {
             <div key={item.id} className="flex gap-2">
               <PiBuildingApartment className="text-myGold text-2xl" />
 
-              <div dangerouslySetInnerHTML={{ __html: item.title }} />
+              <div dangerouslySetInnerHTML={{ __html: item.title }} className="flex-1" />
             </div>
           ))}
         </div>

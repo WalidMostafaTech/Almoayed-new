@@ -8,8 +8,8 @@ const ServiceAbout = ({ data }) => {
   const { t } = useTranslation();
 
   return (
-    <section className="container sectionPadding grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
-      <div>
+    <section className="container sectionPadding flex flex-col lg:flex-row gap-4 lg:gap-16">
+      <div className="flex-1">
         <SectionTitle
           wide
           description={data?.name}
@@ -24,23 +24,25 @@ const ServiceAbout = ({ data }) => {
         </Link>
       </div>
 
-      <div className="min-h-[300px] max-h-[400px] bg-myDark-2 object-cover overflow-hidden rounded-4xl relative">
-        {data?.video_link && (
-          <Link
-            to={data?.video_link}
-            target="_blank"
-            className="absolute inset-0 z-20 flex items-center justify-center rounded-4xl bg-black/50"
-          >
-            <img src={youtubeIcon} alt="youtube" className="w-12" />
-          </Link>
-        )}
+      {data?.video_image && (
+        <div className="min-h-[300px] max-h-[400px] w-full lg:w-[50%] bg-myDark-2 object-cover overflow-hidden rounded-4xl relative">
+          {data?.video_link && (
+            <Link
+              to={data?.video_link}
+              target="_blank"
+              className="absolute inset-0 z-20 flex items-center justify-center rounded-4xl bg-black/50"
+            >
+              <img src={youtubeIcon} alt="youtube" className="w-12" />
+            </Link>
+          )}
 
-        <img
-          src={data?.video_image}
-          alt="about-service"
-          className="w-full h-full object-cover"
-        />
-      </div>
+          <img
+            src={data?.video_image}
+            alt="about-service"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
     </section>
   );
 };
