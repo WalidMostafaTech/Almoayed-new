@@ -135,7 +135,8 @@
   "productAbout": {
     "title": "نبذة عن المشروع",
     "generalProfile": "تحميل البروفايل العام",
-    "residentialProfile": "تحميل البروفايل السكنى"
+    "residentialProfile": "تحميل البروفايل السكنى",
+    "location_link": "موقع المشروع"
   },
 
   "projectFeatures": {

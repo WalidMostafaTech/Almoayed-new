@@ -135,7 +135,8 @@
   "productAbout": {
     "title": "Project Overview",
     "generalProfile": "Download General Profile",
-    "residentialProfile": "Download Residential Profile"
+    "residentialProfile": "Download Residential Profile",
+    "location_link" :"Location Link"
   },
 
   "projectFeatures": {
