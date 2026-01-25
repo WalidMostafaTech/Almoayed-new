@@ -63,7 +63,7 @@ const AchievementsSection = ({ data, center = false, loading }) => {
           setCounts([0, 0, 0, 0]);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     if (sectionRef.current) {
@@ -100,6 +100,18 @@ const AchievementsSection = ({ data, center = false, loading }) => {
     return () => intervals.forEach((interval) => clearInterval(interval));
   }, [startCount, items]);
 
+  const getNumberSize = (value) => {
+    const length = value.toString().length;
+
+    if (length <= 4) return "text-5xl";
+    if (length === 5) return "text-4xl sm:text-5xl";
+    if (length >= 6) return "text-3xl sm:text-5xl";
+    if (length >= 7) return "text-2xl sm:text-4xl";
+    if (length >= 8) return "text-xl sm:text-3xl";
+
+    return "text-2xl sm:text-4xl";
+  };
+
   // Early returns بعد كل الـ Hooks
   if (loading) return <SkeletonPostSection center={center} />;
   if (!data) return null;
@@ -122,12 +134,16 @@ const AchievementsSection = ({ data, center = false, loading }) => {
             <div
               key={item.id}
               className={`
-                flex flex-col items-center justify-center gap-2 text-center py-8 border-myGold
+                flex flex-col items-center justify-between gap-2 text-center py-8 border-myGold
                 ${index % 2 === 0 ? "border-e" : ""}
                 ${index < 2 ? "border-b" : ""}
               `}
             >
-              <span className="text-5xl font-bold text-myGold">
+              <span
+                className={`font-bold text-myGold transition-all duration-300 ${getNumberSize(
+                  counts[index],
+                )}`}
+              >
                 +{counts[index]}
               </span>
               <span>{item.label}</span>
